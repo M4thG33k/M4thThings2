@@ -17,13 +17,16 @@ buildscript {
 
 apply plugin: 'forge'
 
-version = "1.0"
-group= "com.yourname.modid" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = "modid"
+version = "0.0.2-alpha"
+group= "net.m4thg33k.m4ththings" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+archivesBaseName = "M4thThings-1.7.10"
 
 minecraft {
-    version = "1.7.10-10.13.4.1558-1.7.10"
+    version = "1.7.10-10.13.2.1291"
     runDir = "eclipse"
+
+    replace "@VERSION", project.version
+    replaceIn "M4thThings.java"
 }
 
 dependencies {
