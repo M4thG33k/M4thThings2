@@ -1,5 +1,7 @@
 package com.m4thg33k.m4ththings.proxies;
 
+import com.m4thg33k.m4ththings.packets.PacketFilling;
+import com.m4thg33k.m4ththings.packets.PacketNBT;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
@@ -22,6 +24,14 @@ public class CommonProxy {
 
     public void postInit(FMLPostInitializationEvent e)
     {
+
+    }
+
+    public void handleNBTPacket(PacketNBT message){
+
+    }
+
+    public void startParticleRendering(PacketFilling message){
 
     }
 }

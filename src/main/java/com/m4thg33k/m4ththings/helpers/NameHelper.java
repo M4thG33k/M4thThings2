@@ -13,4 +13,9 @@ public class NameHelper {
     {
         return M4thThings.MOD_ID + ":" + end;
     }
+
+    public static String getStrippedName(String unlocalized)
+    {
+        return unlocalized.substring(M4thThings.MOD_ID.length());
+    }
 }

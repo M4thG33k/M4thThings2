@@ -41,16 +41,10 @@ public class BaseTankRenderer extends TileEntitySpecialRenderer {
 
         //render the sphere as long as there is fluid in the tank
         if (tankInfo.fluid != null && tankInfo.fluid.amount > 0) {
+            int timer = tank.getTimer();
+            double percentage = tankInfo.fluid.amount*1.0/tankInfo.capacity;
             bindTexture(fluidTexture);
-            SphereRenderer.renderSphere(x + 0.5, y + 0.5, z + 0.5, 0.0, 1.0, tankInfo.fluid.getFluid().getIcon());// Blocks.water.getIcon(0, 0));
-        }
-        else
-        {
-            LogHelper.info("Umm...I'm empty...");
-            if (tankInfo.fluid != null)
-            {
-                LogHelper.info(tankInfo.fluid.amount);
-            }
+            SphereRenderer.renderSphere(x + 0.5, y + 0.5+0.05*percentage*Math.sin(timer*3.14159/180), z + 0.5, (double)timer, 0.75*percentage, tankInfo.fluid.getFluid().getIcon());// Blocks.water.getIcon(0, 0));
         }
 
     }

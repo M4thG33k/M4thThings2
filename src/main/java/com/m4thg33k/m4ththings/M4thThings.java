@@ -2,7 +2,10 @@ package com.m4thg33k.m4ththings;
 
 
 import com.m4thg33k.m4ththings.init.ModBlocks;
+import com.m4thg33k.m4ththings.init.ModItems;
+import com.m4thg33k.m4ththings.init.ModRecipes;
 import com.m4thg33k.m4ththings.init.ModTiles;
+import com.m4thg33k.m4ththings.packets.ModPackets;
 import com.m4thg33k.m4ththings.proxies.CommonProxy;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
@@ -27,13 +30,16 @@ public class M4thThings {
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent e){
+        ModPackets.init();
         ModBlocks.init();
+        ModItems.init();
         ModTiles.init();
     }
 
     @Mod.EventHandler
     public void init(FMLInitializationEvent e)
     {
+        ModRecipes.init();
         proxy.registerRenderers();
 
     }
