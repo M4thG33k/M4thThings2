@@ -23,6 +23,7 @@ public class TileBaseTank extends TileFluidHandler implements IM4thNBTSync{
     protected int tankSize;
     protected int mode;
     protected int numModes = 3;
+    protected boolean advanced;
 
     public TileBaseTank()
     {
@@ -32,7 +33,7 @@ public class TileBaseTank extends TileFluidHandler implements IM4thNBTSync{
         timer = 0;
         tank = new FluidTank(cap);
         mode = 0;
-
+        advanced = false;
     }
 
     public void advanceTimer()
@@ -81,7 +82,7 @@ public class TileBaseTank extends TileFluidHandler implements IM4thNBTSync{
             {
                 ModPackets.INSTANCE.sendToAllAround(new PacketFilling(xCoord,yCoord,zCoord,from.ordinal(),1,FluidRegistry.getFluidName(resource),toReturn,tankSize),new NetworkRegistry.TargetPoint(worldObj.provider.dimensionId,xCoord,yCoord,zCoord,32));
             }
-            if (toReturn != resource.amount && from!=ForgeDirection.UP) //if we have leftovers, try to push them into a valid tank above
+            if (toReturn != resource.amount && from!=ForgeDirection.UP && resource.isFluidEqual(tank.getFluid())) //if we have leftovers *of the right fluid*, try to push them into a valid tank above
             {
                 TileEntity tileEntity = worldObj.getTileEntity(xCoord,yCoord+1,zCoord);
                 int pushing = 0;
@@ -123,7 +124,7 @@ public class TileBaseTank extends TileFluidHandler implements IM4thNBTSync{
         if (canDrain(from,null))
         {
             FluidStack toReturn = super.drain(from, maxDrain, doDrain);
-            if (doDrain)
+            if (doDrain && toReturn != null && toReturn.amount>0)
             {
                 ModPackets.INSTANCE.sendToAllAround(new PacketFilling(xCoord,yCoord,zCoord,from.ordinal(),0,FluidRegistry.getFluidName(toReturn),toReturn.amount,tankSize),new NetworkRegistry.TargetPoint(worldObj.provider.dimensionId,xCoord,yCoord,zCoord,32));
             }
@@ -134,7 +135,10 @@ public class TileBaseTank extends TileFluidHandler implements IM4thNBTSync{
 
     @Override
     public boolean canFill(ForgeDirection from, Fluid fluid) {
-        return (from == ForgeDirection.DOWN || from == ForgeDirection.UP || from == ForgeDirection.UNKNOWN);
+        //we shouldn't allow filling from below if we are in drain mode and the block below is not a another tank
+        TileEntity tileEntity = worldObj.getTileEntity(xCoord,yCoord-1,zCoord);
+        return (from == ForgeDirection.UNKNOWN || from == ForgeDirection.UP || (from == ForgeDirection.DOWN && ((mode!=1) || (tileEntity != null && tileEntity instanceof TileBaseTank)) ));
+        //return (from == ForgeDirection.DOWN || from == ForgeDirection.UP || from == ForgeDirection.UNKNOWN);
     }
 
     @Override
@@ -272,5 +276,36 @@ public class TileBaseTank extends TileFluidHandler implements IM4thNBTSync{
 
         tagCompound.setInteger("Timer",timer);
         tagCompound.setInteger("Mode",mode);
+    }
+
+    public boolean isAdvanced()
+    {
+        return advanced;
+    }
+
+    public void setMode(int m)
+    {
+        mode = m%numModes;
+    }
+
+    public int getAmount()
+    {
+        return tank.getFluidAmount();
+    }
+
+    public int getCap()
+    {
+        return cap;
+    }
+
+    public FluidStack getFluid()
+    {
+        return tank.getFluid();
+    }
+
+    public double getRoundedPercentFilled()
+    {
+        int percent = (int)(getPercentFilled()*10000);
+        return ((double)percent)/100.0;
     }
 }

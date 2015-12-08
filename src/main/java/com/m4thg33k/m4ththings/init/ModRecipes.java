@@ -4,6 +4,7 @@ package com.m4thg33k.m4ththings.init;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
 public class ModRecipes {
@@ -25,5 +26,10 @@ public class ModRecipes {
         GameRegistry.addRecipe(new ItemStack(ModItems.itemModCrafting,1,0),"n n"," n ",'n',new ItemStack(ModItems.itemModNugget,1,0));
         //BaseTank
         GameRegistry.addRecipe(new ItemStack(ModBlocks.blockBaseTank,1)," v ","g g"," v ",'v',new ItemStack(ModItems.itemModCrafting,1,0),'g',new ItemStack(Blocks.glass,1));
+        GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.blockBaseTank,1),new ItemStack(ModBlocks.blockBaseTank,1));
+        //AdvancedTank
+        GameRegistry.addRecipe(new ItemStack(ModBlocks.blockAdvancedTank,1)," v ","gBg"," v ",'v', new ItemStack(ModItems.itemModCrafting,1,0),'g',new ItemStack(Blocks.glass,1),'B',new ItemStack(ModBlocks.blockIngotBlock,1,0));
+        GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.blockAdvancedTank,1),new ItemStack(ModBlocks.blockBaseTank,1),new ItemStack(ModBlocks.blockIngotBlock,1,0));
+        GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.blockAdvancedTank,1),new ItemStack(ModBlocks.blockAdvancedTank,1));
     }
 }

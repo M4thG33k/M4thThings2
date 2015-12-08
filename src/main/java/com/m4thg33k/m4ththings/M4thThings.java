@@ -10,6 +10,7 @@ import com.m4thg33k.m4ththings.proxies.CommonProxy;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLInterModComms;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
@@ -39,6 +40,7 @@ public class M4thThings {
     @Mod.EventHandler
     public void init(FMLInitializationEvent e)
     {
+        FMLInterModComms.sendMessage("Waila","register","com.m4thg33k.m4ththings.utility.WailaInteraction.load");
         ModRecipes.init();
         proxy.registerRenderers();
 

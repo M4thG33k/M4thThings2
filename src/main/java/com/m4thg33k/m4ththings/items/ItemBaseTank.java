@@ -44,7 +44,7 @@ public class ItemBaseTank extends ItemBlock implements IFluidContainerItem{
             NBTTagCompound tagCompound = itemStack.getTagCompound();
 
             list.add(FluidRegistry.getFluid(tagCompound.getString("FluidName")).getLocalizedName(null));
-            list.add(tagCompound.getInteger("Amount") + "/" + "8000mb");
+            list.add(tagCompound.getInteger("Amount") + "/" + capacity + "mb");
         }
     }
 

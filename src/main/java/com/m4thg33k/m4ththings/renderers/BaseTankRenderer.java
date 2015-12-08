@@ -2,6 +2,7 @@ package com.m4thg33k.m4ththings.renderers;
 
 import com.m4thg33k.m4ththings.tiles.tanks.TileBaseTank;
 import com.m4thg33k.m4ththings.utility.LogHelper;
+import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.texture.TextureMap;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.init.Blocks;
@@ -16,14 +17,20 @@ import org.lwjgl.opengl.GL11;
 public class BaseTankRenderer extends TileEntitySpecialRenderer {
 
     private IModelCustom fluidPorts;
-    private ResourceLocation fluidPortTexture;
+    private ResourceLocation fluidPortTextureBase;
+    private ResourceLocation fluidPortTextureAdvanced;
     private ResourceLocation fluidTexture;
+    private ResourceLocation drainOverlay;
+    private ResourceLocation placeOverlay;
 
     public BaseTankRenderer()
     {
         fluidPorts = AdvancedModelLoader.loadModel(new ResourceLocation("m4ththings","models/quantumTank.obj"));
-        fluidPortTexture = new ResourceLocation("m4ththings","models/fluidTank3.png");
+        fluidPortTextureBase = new ResourceLocation("m4ththings","models/baseTank.png");
+        fluidPortTextureAdvanced = new ResourceLocation("m4ththings","models/advancedTank.png");
         fluidTexture = TextureMap.locationBlocksTexture;
+        drainOverlay = new ResourceLocation("m4ththings","models/tankDrainOverlay.png");
+        placeOverlay = new ResourceLocation("m4ththings","models/tankPlaceOverlay.png");
     }
 
     @Override
@@ -35,7 +42,13 @@ public class BaseTankRenderer extends TileEntitySpecialRenderer {
         //Render the frame
         GL11.glPushMatrix();
         GL11.glTranslated(x+0.5,y+0.5,z+0.5);
-        bindTexture(fluidPortTexture);
+        if (tank.isAdvanced()) {
+            bindTexture(fluidPortTextureAdvanced);
+        }
+        else
+        {
+            bindTexture(fluidPortTextureBase);
+        }
         fluidPorts.renderAll();
         GL11.glPopMatrix();
 
@@ -44,8 +57,58 @@ public class BaseTankRenderer extends TileEntitySpecialRenderer {
             int timer = tank.getTimer();
             double percentage = tankInfo.fluid.amount*1.0/tankInfo.capacity;
             bindTexture(fluidTexture);
-            SphereRenderer.renderSphere(x + 0.5, y + 0.5+0.05*percentage*Math.sin(timer*3.14159/180), z + 0.5, (double)timer, 0.75*percentage, tankInfo.fluid.getFluid().getIcon());// Blocks.water.getIcon(0, 0));
+            SphereRenderer.renderSphere(x + 0.5, y + 0.5+0.05*percentage*Math.sin(timer*3.14159/180), z + 0.5, (double)timer, .1+0.64*percentage/*0.75*percentage*/, tankInfo.fluid.getFluid().getIcon());// Blocks.water.getIcon(0, 0));
         }
 
+        int mode = tank.getMode();
+        renderOverlay(x,y,z,mode);
+
+    }
+
+    public void renderOverlay(double x, double y, double z,int mode)
+    {
+        switch (mode)
+        {
+            case 1:
+                bindTexture(drainOverlay);
+                break;
+            case 2:
+                bindTexture(placeOverlay);
+                break;
+            default:
+                return;
+        }
+
+        GL11.glPushMatrix();
+        GL11.glTranslated(x,y,z);
+        Tessellator t = Tessellator.instance;
+        t.startDrawingQuads();
+        t.addVertexWithUV(0.33,0,0.33,0.0,1.0);
+        t.addVertexWithUV(0.33,0.03,0.33,0.0,0.0);
+        t.addVertexWithUV(0.67,0.03,0.33,1.0,0.0);
+        t.addVertexWithUV(0.67,0,0.33,1.0,1.0);
+        t.draw();
+
+        t.startDrawingQuads();
+        t.addVertexWithUV(0.67,0,0.33,0.0,1.0);
+        t.addVertexWithUV(0.67,0.03,0.33,0.0,0.0);
+        t.addVertexWithUV(0.67,0.03,0.67,1.0,0.0);
+        t.addVertexWithUV(0.67,0,0.67,1.0,1.0);
+        t.draw();
+
+        t.startDrawingQuads();
+        t.addVertexWithUV(0.67,0,0.67,0.0,1.0);
+        t.addVertexWithUV(0.67,0.03,0.67,0.0,0.0);
+        t.addVertexWithUV(0.33,0.03,0.67,1.0,0.0);
+        t.addVertexWithUV(0.33,0,0.67,1.0,1.0);
+        t.draw();
+
+        t.startDrawingQuads();
+        t.addVertexWithUV(0.33,0,0.67,0.0,1.0);
+        t.addVertexWithUV(0.33,0.03,0.67,0.0,0.0);
+        t.addVertexWithUV(0.33,0.03,0.33,1.0,0.0);
+        t.addVertexWithUV(0.33,0,0.33,1.0,1.0);
+        t.draw();
+        GL11.glPopMatrix();
     }
 }

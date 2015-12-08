@@ -1,8 +1,13 @@
 package com.m4thg33k.m4ththings.renderers.itemRenderers;
 
 import com.m4thg33k.m4ththings.tiles.tanks.TileBaseTank;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.entity.RenderItem;
+import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.client.renderer.tileentity.TileEntityRendererDispatcher;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
+import net.minecraft.entity.item.EntityItem;
+import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.client.IItemRenderer;
@@ -57,6 +62,15 @@ public class BaseTankItemRenderer implements IItemRenderer {
             GL11.glPushMatrix();
             TileEntityRendererDispatcher.instance.renderTileEntityAt(tileEntity,0.0,0.0,0.0,0.0f);
             GL11.glPopMatrix();
+
+/*
+            //testing stuff
+            GL11.glPushMatrix();
+            EntityItem entityItem = new EntityItem(Minecraft.getMinecraft().theWorld,0D,0D,0D,new ItemStack(Items.ender_pearl,1));
+            entityItem.hoverStart = 0.0F;
+            RenderItem.renderInFrame = false;
+            RenderManager.instance.renderEntityWithPosYaw(entityItem,0.0D,0.0D,0.0D,0.0F,0.0F);
+            GL11.glPopMatrix();*/
         }
 
         if (type==ItemRenderType.EQUIPPED)

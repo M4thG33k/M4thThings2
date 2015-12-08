@@ -21,20 +21,55 @@ public class ParticleManager {
         EffectRenderer renderer = Minecraft.getMinecraft().effectRenderer;
         TileBaseTank tileBaseTank = (TileBaseTank) (world.getTileEntity(xCoord, yCoord, zCoord));
 
-        double centerSpeed = 0.04;
-        double centerDistance;
-        double radius = 0.375 * tileBaseTank.getPercentFilled();
+        double radius = 0.05 + 0.325*tileBaseTank.getPercentFilled();//0.375 * tileBaseTank.getPercentFilled();
         double rad;
         double d1;
         double d2;
         EntityFX fluidOrb;
-        double radiusMultiplier = 10.0;
         double verticalOffset = tileBaseTank.getPercentFilled() * Math.sin((double) tileBaseTank.getTimer() * MathHelper.pi / (180.0));
         double randomHelper;
         double baseLifeLength = 10.0;
 
         switch (direction) {
-            case 6: //UNKNOWN (from buckets) - no particles wanted
+            case 6: //UNKNOWN (from buckets)
+                if (isFilling==1) //we are filling from an unknown direction (normally buckets)
+                {
+                    double theta,phi,myLife,x1,y1,z1,xVel,yVel,zVel;
+                    for (int i=0;i<amount;i+=10)
+                    {
+                        theta = MathHelper.randomRad();
+                        phi = MathHelper.randomRad()/2.0;
+                        randomHelper = 1.0 - 0.1*Math.random();
+                        myLife = baseLifeLength*randomHelper;
+                        x1 = xCoord+0.5+.4*Math.cos(theta)*Math.sin(phi);
+                        y1 = yCoord+0.5+0.05*verticalOffset+0.4*Math.cos(phi);
+                        z1 = zCoord+0.5+0.4*Math.sin(theta)*Math.sin(phi);
+                        xVel = (0.4-radius)*Math.cos(theta)*Math.sin(phi)/myLife;
+                        yVel = (0.4-radius)*Math.cos(phi)/myLife;
+                        zVel = (0.4-radius)*Math.sin(theta)*Math.sin(phi)/myLife;
+                        fluidOrb = new ParticleFluidOrb(world,x1,y1,z1,-xVel,-yVel,-zVel,fluid,tankSize,(int)myLife);
+                        renderer.addEffect(fluidOrb);
+                    }
+                }
+                else
+                {
+                    double theta,phi,myLife,x1,y1,z1,xVel,yVel,zVel;
+                    for (int i=0;i<amount;i+=10)
+                    {
+                        theta = MathHelper.randomRad();
+                        phi = MathHelper.randomRad()/2.0;
+                        randomHelper = 1.0 - 0.1*Math.random();
+                        myLife = baseLifeLength*randomHelper;
+                        x1 = xCoord+0.5+radius*Math.cos(theta)*Math.sin(phi);
+                        y1 = yCoord+0.5+0.05*verticalOffset+radius*Math.cos(phi);
+                        z1 = zCoord+0.5+radius*Math.sin(theta)*Math.sin(phi);
+                        xVel = (0.4-radius)*Math.cos(theta)*Math.sin(phi)/myLife;
+                        yVel = (0.4-radius)*Math.cos(phi)/myLife;
+                        zVel = (0.4-radius)*Math.sin(theta)*Math.sin(phi)/myLife;
+                        fluidOrb = new ParticleFluidOrb(world,x1,y1,z1,xVel,yVel,zVel,fluid,tankSize,(int)myLife);
+                        renderer.addEffect(fluidOrb);
+                    }
+                }
                 break;
             case 0: //from DOWN (0)
                 if (isFilling==1) // we are filling from DOWN
@@ -66,6 +101,31 @@ public class ParticleManager {
                 }
                 break;
             default: //from UP (1)
+                if (isFilling==1) {
+                    for (int i = 0; i < amount; i += 100) {
+                        rad = MathHelper.randomRad();
+                        randomHelper = 1.0 - 0.1 * Math.random();
+                        double myLife = baseLifeLength * randomHelper;
+                        d1 = radius * Math.sin(rad);
+                        d2 = radius * Math.cos(rad);
+                        //LogHelper.info("(" + d1 + ", " + d2 + ")");
+                        fluidOrb = new ParticleFluidOrb(world, xCoord + 0.5, yCoord + 0.95, zCoord + 0.5, d1 / myLife, -(0.45 + 0.05 * verticalOffset) / (myLife), d2 / myLife, fluid, tankSize, (int) myLife);
+                        renderer.addEffect(fluidOrb);
+                    }
+                }
+                else
+                {
+                    for (int i=0;i<amount;i+=100)
+                    {
+                        rad = MathHelper.randomRad();
+                        randomHelper = 1.0 - 0.1*Math.random();
+                        double myLife = baseLifeLength*randomHelper;
+                        d1 = radius*Math.sin(rad);
+                        d2 = radius*Math.cos(rad);
+                        fluidOrb = new ParticleFluidOrb(world,xCoord+0.5+d1,yCoord+0.5+0.05*verticalOffset,zCoord+0.5+d2,-d1/myLife,(0.45+0.05*verticalOffset)/(myLife),-d2/myLife,fluid,tankSize,(int)myLife);
+                        renderer.addEffect(fluidOrb);
+                    }
+                }
 
         }
     }

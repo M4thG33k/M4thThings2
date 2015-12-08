@@ -4,9 +4,6 @@ import cofh.api.block.IDismantleable;
 import cofh.api.item.IToolHammer;
 import com.m4thg33k.m4ththings.helpers.ChatHelper;
 import com.m4thg33k.m4ththings.helpers.NameHelper;
-import com.m4thg33k.m4ththings.helpers.StringHelper;
-import com.m4thg33k.m4ththings.init.ModItems;
-import com.m4thg33k.m4ththings.items.ItemWrench;
 import com.m4thg33k.m4ththings.tiles.tanks.TileBaseTank;
 import com.m4thg33k.m4ththings.utility.LogHelper;
 import net.minecraft.block.Block;
@@ -27,7 +24,6 @@ import net.minecraftforge.common.util.ForgeDirection;
 import net.minecraftforge.fluids.FluidContainerRegistry;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.IFluidContainerItem;
-import sun.rmi.runtime.Log;
 
 import java.util.ArrayList;
 
@@ -40,6 +36,8 @@ public class BlockBaseTank extends Block implements ITileEntityProvider, IDisman
         setResistance(5.0F);
         setBlockName(NameHelper.blockItemName("blockBaseTank"));
         setBlockTextureName(NameHelper.textureName("blank"));
+        setStepSound(Blocks.glass.stepSound);
+        setHarvestLevel("pickaxe",2);
     }
 
     @Override
@@ -124,14 +122,14 @@ public class BlockBaseTank extends Block implements ITileEntityProvider, IDisman
         TileEntity tEnt = world.getTileEntity(x,y+1,z);
         if (tEnt!=null && tEnt instanceof TileBaseTank)
         {
-            ((TileBaseTank)tEnt).switchMode(false);
+            ((TileBaseTank)tEnt).setMode(1);
         }
 
         //if the block below the placed one is another BlockBaseTank, we should automatically set this tank to drain mode
         Block below = world.getBlock(x,y-1,z);
         if (below!=null && below instanceof BlockBaseTank && tileEntity!=null && tileEntity instanceof TileBaseTank)
         {
-            ((TileBaseTank)tileEntity).switchMode(false);
+            ((TileBaseTank)tileEntity).setMode(1);
         }
     }
 
@@ -207,6 +205,15 @@ public class BlockBaseTank extends Block implements ITileEntityProvider, IDisman
 
         if (fluidHeld != null && tileEntity != null && tileEntity instanceof TileBaseTank)
         {
+            /*
+            LogHelper.info("Entering check for held fluids");
+            LogHelper.info(fluidHeld.getFluid().getName());
+            LogHelper.info(fluidHeld.amount);
+            LogHelper.info(held.getDisplayName());
+            LogHelper.info("Is bucket: " + FluidContainerRegistry.isBucket(held));
+            LogHelper.info(((TileBaseTank)tileEntity).fill(ForgeDirection.UNKNOWN,fluidHeld,false));
+            LogHelper.info("Is creative: " + player.capabilities.isCreativeMode);*/
+
             TileBaseTank tank = (TileBaseTank)tileEntity;
             if (tank.fill(ForgeDirection.UNKNOWN,fluidHeld,false)==fluidHeld.amount)
             {
@@ -245,7 +252,7 @@ public class BlockBaseTank extends Block implements ITileEntityProvider, IDisman
 
         if (held!=null && held.getItem() instanceof IToolHammer && ((IToolHammer)held.getItem()).isUsable(held,player,x,y,z) && !player.isSneaking() && tileEntity instanceof TileBaseTank)
         {
-            ((TileBaseTank)tileEntity).switchMode(true);
+            ((TileBaseTank)tileEntity).switchMode(this.amAdvanced());
             int mode = ((TileBaseTank)tileEntity).getMode();
 
             displayMode(world,player,mode);
@@ -287,6 +294,16 @@ public class BlockBaseTank extends Block implements ITileEntityProvider, IDisman
                 message = "default";
         }
         ChatHelper.sayMessage(world,player,"Currently in " + message + " mode");
+    }
+
+    protected boolean amAdvanced()
+    {
+        return false;
+    }
+
+    @Override
+    public boolean isLadder(IBlockAccess world, int x, int y, int z, EntityLivingBase entity) {
+        return true;
     }
 }
 

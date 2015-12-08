@@ -5,4 +5,6 @@ import net.minecraft.nbt.NBTTagCompound;
 public interface IM4thNBTSync {
 
     void receiveNBTPacket(NBTTagCompound tagCompound);
+
+    void prepareSync();
 }
