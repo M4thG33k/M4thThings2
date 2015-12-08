@@ -2093,7 +2093,7 @@
       <workItem from="1449032080257" duration="3045000" />
       <workItem from="1449080993974" duration="14093000" />
       <workItem from="1449119014530" duration="26577000" />
-      <workItem from="1449363538689" duration="61519000" />
+      <workItem from="1449363538689" duration="61526000" />
     </task>
     <task id="LOCAL-00001" summary="Added the basic tank again; not fully operational, but it's there!">
       <created>1449093117311</created>
@@ -2113,11 +2113,17 @@
       <option name="project" value="LOCAL" />
       <updated>1449550398675</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Finalizing the tanks&#10;Starting work on a fluid transfer system">
+      <created>1449550408393</created>
+      <option name="number" value="00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1449550408393</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="105477000" />
+    <option name="totallyTimeSpent" value="105484000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
