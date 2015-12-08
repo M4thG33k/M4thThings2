@@ -4,38 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/blocks/tanks/BlockBaseTank.java" line="169" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2f402229-1e85-4ebc-b120-ed2c2c65bce5" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/blocks/BlockTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/blocks/tanks/BlockAdvancedTank.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/interfaces/IConnectableSides.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/items/ItemAdvancedTank.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/renderers/CubeRenderer.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/renderers/TestRenderer.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/tiles/TileConnectable.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/tiles/TileTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/tiles/tanks/TileAdvancedTank.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/utility/BasicTools.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/utility/WailaInteraction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/M4thThings2.iml" afterPath="$PROJECT_DIR$/M4thThings2.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eclipse/logs/fml-client-latest.log" afterPath="$PROJECT_DIR$/eclipse/logs/fml-client-latest.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eclipse/logs/fml-junk-earlystartup.log" afterPath="$PROJECT_DIR$/eclipse/logs/fml-junk-earlystartup.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eclipse/logs/latest.log" afterPath="$PROJECT_DIR$/eclipse/logs/latest.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eclipse/usernamecache.json" afterPath="$PROJECT_DIR$/eclipse/usernamecache.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/M4thThings.java" afterPath="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/M4thThings.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/blocks/tanks/BlockBaseTank.java" afterPath="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/blocks/tanks/BlockBaseTank.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/init/ModBlocks.java" afterPath="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/init/ModBlocks.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/init/ModRecipes.java" afterPath="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/init/ModRecipes.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/init/ModRenderers.java" afterPath="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/init/ModRenderers.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/init/ModTiles.java" afterPath="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/init/ModTiles.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/interfaces/IM4thNBTSync.java" afterPath="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/interfaces/IM4thNBTSync.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/items/ItemBaseTank.java" afterPath="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/items/ItemBaseTank.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/particles/ParticleManager.java" afterPath="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/particles/ParticleManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/renderers/BaseTankRenderer.java" afterPath="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/renderers/BaseTankRenderer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/renderers/itemRenderers/BaseTankItemRenderer.java" afterPath="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/renderers/itemRenderers/BaseTankItemRenderer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/tiles/tanks/TileBaseTank.java" afterPath="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/tiles/tanks/TileBaseTank.java" />
-    </list>
+    <list default="true" id="2f402229-1e85-4ebc-b120-ed2c2c65bce5" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
     <ignored path="$PROJECT_DIR$/classes/" />
@@ -2124,7 +2093,7 @@
       <workItem from="1449032080257" duration="3045000" />
       <workItem from="1449080993974" duration="14093000" />
       <workItem from="1449119014530" duration="26577000" />
-      <workItem from="1449363538689" duration="61480000" />
+      <workItem from="1449363538689" duration="61519000" />
     </task>
     <task id="LOCAL-00001" summary="Added the basic tank again; not fully operational, but it's there!">
       <created>1449093117311</created>
@@ -2138,11 +2107,17 @@
       <option name="project" value="LOCAL" />
       <updated>1449423625762</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Finalizing the tanks&#10;Starting work on a fluid transfer system">
+      <created>1449550398674</created>
+      <option name="number" value="00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1449550398675</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="105438000" />
+    <option name="totallyTimeSpent" value="105477000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
@@ -2214,7 +2189,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added the basic tank again; not fully operational, but it's there!" />
     <MESSAGE value="Still working on getting the basics done;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Still working on getting the basics done;" />
+    <MESSAGE value="Finalizing the tanks&#10;Starting work on a fluid transfer system" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finalizing the tanks&#10;Starting work on a fluid transfer system" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
