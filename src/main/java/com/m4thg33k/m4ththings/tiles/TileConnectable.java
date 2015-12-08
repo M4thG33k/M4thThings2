@@ -35,7 +35,6 @@ public class TileConnectable extends TileEntity implements IConnectableSides,IM4
             sides = BasicTools.intToBoolArray(tagCompound.getIntArray("ConnectedSides"));
         }
 
-        prepareSync();
     }
 
     @Override
@@ -114,6 +113,7 @@ public class TileConnectable extends TileEntity implements IConnectableSides,IM4
     @Override
     public void receiveNBTPacket(NBTTagCompound tagCompound) {
         this.readFromNBT(tagCompound);
+        this.markDirty();
     }
 
     public void prepareSync() {
