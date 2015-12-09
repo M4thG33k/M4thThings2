@@ -4,23 +4,30 @@
     <bookmark url="file://$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/blocks/tanks/BlockBaseTank.java" line="169" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2f402229-1e85-4ebc-b120-ed2c2c65bce5" name="Default" comment="Moved a bit o' code around">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/assets/m4ththings/models/advancedTank.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/assets/m4ththings/models/baseTank.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/assets/m4ththings/models/tankDrainOverlay.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/assets/m4ththings/models/tankPlaceOverlay.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/assets/m4ththings/textures/blocks/goldPlatedIronBlock.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/assets/m4ththings/textures/items/goldPlatedIron.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/assets/m4ththings/textures/items/goldPlatedIronNugget.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/assets/m4ththings/textures/items/itemTankValve.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/assets/m4ththings/textures/items/itemWrench.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/assets/m4ththings/models/quantumTank.obj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eclipse/saves/Test/DIM-1/data/villages.dat" afterPath="$PROJECT_DIR$/eclipse/saves/Test/DIM-1/data/villages.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eclipse/saves/Test/DIM1/data/villages.dat" afterPath="$PROJECT_DIR$/eclipse/saves/Test/DIM1/data/villages.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eclipse/saves/Test/data/villages.dat" afterPath="$PROJECT_DIR$/eclipse/saves/Test/data/villages.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eclipse/saves/Test/level.dat" afterPath="$PROJECT_DIR$/eclipse/saves/Test/level.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eclipse/saves/Test/level.dat_old" afterPath="$PROJECT_DIR$/eclipse/saves/Test/level.dat_old" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eclipse/saves/Test/session.lock" afterPath="$PROJECT_DIR$/eclipse/saves/Test/session.lock" />
+    <list default="true" id="2f402229-1e85-4ebc-b120-ed2c2c65bce5" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/eclipse/mods/1.7.10/Baubles-1.7.10-1.0.1.10.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/eclipse/mods/1.7.10/CodeChickenLib-1.7.10-1.1.3.138-dev.jar.disabled" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/eclipse/mods/CoFHCore-[1.7.10]3.0.2-262.jar.disabled" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/eclipse/mods/CoFHLib-[1.7.10]1.0.2-160.jar.disabled" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/eclipse/mods/CodeChickenCore-1.7.10-1.0.4.35-universal.jar.disabled" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/eclipse/mods/CodeChickenCore-1.7.10-1.0.7.47-dev.jar.disabled" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/eclipse/mods/NotEnoughItems-1.7.10-1.0.5.118-dev.jar.disabled" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/eclipse/mods/ThermalDynamics-[1.7.10]1.0.0-122.jar.disabled" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/eclipse/mods/ThermalDynamics-[1.7.10]1.1.0-161.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/eclipse/mods/ThermalExpansion-[1.7.10]4.0.1-182.jar.disabled" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/eclipse/mods/ThermalExpansion-[1.7.10]4.0.3B1-218.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/eclipse/mods/ThermalFoundation-[1.7.10]1.0.0-81.jar.disabled" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/eclipse/mods/ThermalFoundation-[1.7.10]1.2.0-102.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/eclipse/mods/Waila-1.5.10_1.7.10.jar.disabled" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/CoFHCore-[1.7.10]3.0.3-303.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/CoFHLib-[1.7.10]1.0.3-175.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/CodeChickenCore-1.7.10-1.0.4.35-universal.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/CodeChickenLib-1.7.10-1.1.1.99-dev.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/NotEnoughItems-1.7.10-1.0.4.95-universal.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/Thaumcraft-1.7.10-4.2.0.0-api.zip" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/Thaumcraft-1.7.10-4.2.3.5.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/Waila-1.5.10_1.7.10.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/extrautilities-1.2.5.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -2084,7 +2091,7 @@
       <workItem from="1449080993974" duration="14093000" />
       <workItem from="1449119014530" duration="26577000" />
       <workItem from="1449363538689" duration="62221000" />
-      <workItem from="1449703050196" duration="202000" />
+      <workItem from="1449703050196" duration="291000" />
     </task>
     <task id="LOCAL-00001" summary="Added the basic tank again; not fully operational, but it's there!">
       <created>1449093117311</created>
@@ -2122,11 +2129,17 @@
       <option name="project" value="LOCAL" />
       <updated>1449550674923</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Added assets to the repository">
+      <created>1449703276048</created>
+      <option name="number" value="00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1449703276048</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="106381000" />
+    <option name="totallyTimeSpent" value="106470000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
@@ -2134,6 +2147,7 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -2150,7 +2164,6 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3997833" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -2200,7 +2213,8 @@
     <MESSAGE value="Still working on getting the basics done;" />
     <MESSAGE value="Finalizing the tanks&#10;Starting work on a fluid transfer system" />
     <MESSAGE value="Moved a bit o' code around" />
-    <option name="LAST_COMMIT_MESSAGE" value="Moved a bit o' code around" />
+    <MESSAGE value="Added assets to the repository" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added assets to the repository" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
