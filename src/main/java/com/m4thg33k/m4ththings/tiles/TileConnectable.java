@@ -9,6 +9,9 @@ import com.m4thg33k.m4ththings.utility.BasicTools;
 import com.m4thg33k.m4ththings.utility.LogHelper;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.network.NetworkManager;
+import net.minecraft.network.Packet;
+import net.minecraft.network.play.server.S35PacketUpdateTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.common.util.ForgeDirection;
 
@@ -27,24 +30,21 @@ public class TileConnectable extends TileEntity implements IConnectableSides,IM4
     }
 
     @Override
-    public void readFromNBT(NBTTagCompound tagCompound) {
-        super.readFromNBT(tagCompound);
-        if (tagCompound.hasKey("ConnectedSides"))
-        {
-            //LogHelper.info("Reading from NBT!!");
-            sides = BasicTools.intToBoolArray(tagCompound.getIntArray("ConnectedSides"));
-        }
-
+    public void writeToNBT(NBTTagCompound tagCompound) {
+        super.writeToNBT(tagCompound);
+        tagCompound.setIntArray("Connections",BasicTools.boolToIntArray(sides));
     }
 
     @Override
-    public void writeToNBT(NBTTagCompound tagCompound) {
-        LogHelper.info("Writing to NBT!!");
-        super.writeToNBT(tagCompound);
-        tagCompound.setIntArray("ConnectedSides",BasicTools.boolToIntArray(sides));
+    public void readFromNBT(NBTTagCompound tagCompound) {
+        super.readFromNBT(tagCompound);
+        if (tagCompound.hasKey("Connections"))
+        {
+            sides = BasicTools.intToBoolArray(tagCompound.getIntArray("Connections"));
+        }
     }
 
-    //IConnectableSides
+    // IConnectableSides
 
     @Override
     public boolean isSideConnected(ForgeDirection side) {
@@ -52,56 +52,54 @@ public class TileConnectable extends TileEntity implements IConnectableSides,IM4
     }
 
     @Override
-    public void makeConnection(ForgeDirection side,boolean attempt) {
-        //LogHelper.info("Making connection at " + StringHelper.coordinates(xCoord,yCoord,zCoord) + " on side: " + side.ordinal());
-        if (side.ordinal()<6)
+    public void makeConnection(ForgeDirection side, boolean attempt) {
+        if (worldObj.isRemote)
+        {
+            return;
+        }
+        if (!isSideConnected(side) && side.ordinal()<6)
         {
             sides[side.ordinal()] = true;
+            if (attempt)
+            {
+                attemptToMakeNeighborConnection(side);
+            }
+            prepareSync();
         }
-//        if (attempt)
-//        {
-//            attemptToConnectNeighbor(side);
-//        }
-        prepareSync();
     }
 
     @Override
-    public void breakConnection(ForgeDirection side,boolean attempt) {
-        //LogHelper.info("Breaking connection at " + StringHelper.coordinates(xCoord,yCoord,zCoord) + " on side: " + side.ordinal());
-        if (side.ordinal()<6)
+    public void breakConnection(ForgeDirection side, boolean attempt) {
+        if (worldObj.isRemote)
         {
-            sides[side.ordinal()] = true;
+            return;
         }
-//        if (attempt)
-//        {
-//            attemptToBreakNeighbor(side);
-//        }
-        prepareSync();
+        if (isSideConnected(side))
+        {
+            sides[side.ordinal()] = false;
+            if (attempt)
+            {
+                attemptToBreakNeighborConnection(side);
+            }
+            prepareSync();
+        }
     }
 
     @Override
-    public void toggleConnection(ForgeDirection side,boolean attempt) {
-        if (side.ordinal()<6)
+    public void toggleConnection(ForgeDirection side, boolean attempt) {
+        if (worldObj.isRemote || side.ordinal()>=6 || side.ordinal()<0)
         {
-            //sides[side.ordinal()] = !sides[side.ordinal()];
-            if (sides[side.ordinal()])
-            {
-                sides[side.ordinal()] = false;
-//                if (attempt)
-//                {
-//                    attemptToBreakNeighbor(side);
-//                }
-            }
-            else
-            {
-                sides[side.ordinal()] = true;
-//                if (attempt)
-//                {
-//                    attemptToConnectNeighbor(side);
-//                }
-            }
+            return;
         }
-        prepareSync();
+
+        if (isSideConnected(side))
+        {
+            breakConnection(side,attempt);
+        }
+        else
+        {
+            makeConnection(side,attempt);
+        }
     }
 
     @Override
@@ -110,12 +108,13 @@ public class TileConnectable extends TileEntity implements IConnectableSides,IM4
     }
 
     //IM4thNBTSync
+
     @Override
     public void receiveNBTPacket(NBTTagCompound tagCompound) {
         this.readFromNBT(tagCompound);
-        this.markDirty();
     }
 
+    @Override
     public void prepareSync() {
         if (!worldObj.isRemote)
         {
@@ -126,21 +125,53 @@ public class TileConnectable extends TileEntity implements IConnectableSides,IM4
         }
     }
 
-    public void attemptToConnectNeighbor(ForgeDirection side)
+    @Override
+    public Packet getDescriptionPacket() {
+        prepareSync();
+        return null;
+    }
+
+    public void attemptToMakeNeighborConnection(ForgeDirection side)
     {
         TileEntity tileEntity = worldObj.getTileEntity(xCoord+side.offsetX,yCoord+side.offsetY,zCoord+side.offsetZ);
-        if (tileEntity instanceof IConnectableSides)
+        if (tileEntity!=null && tileEntity instanceof TileConnectable)
         {
-            ((IConnectableSides) tileEntity).makeConnection(side.getOpposite(),false);
+            ((TileConnectable) tileEntity).makeConnection(side.getOpposite(),false);
         }
     }
 
-    public void attemptToBreakNeighbor(ForgeDirection side)
+    public void attemptToBreakNeighborConnection(ForgeDirection side)
     {
         TileEntity tileEntity = worldObj.getTileEntity(xCoord+side.offsetX,yCoord+side.offsetY,zCoord+side.offsetZ);
-        if (tileEntity instanceof IConnectableSides)
+        if (tileEntity!=null && tileEntity instanceof TileConnectable)
         {
-            ((IConnectableSides) tileEntity).breakConnection(side.getOpposite(),false);
+            ((TileConnectable) tileEntity).breakConnection(side.getOpposite(),false);
         }
     }
+
+    public void attemptToConnectToSameType()
+    {
+        ForgeDirection[] directions = ForgeDirection.VALID_DIRECTIONS;
+        TileEntity tileEntity;
+        for (int i=0;i<6;i++)
+        {
+            tileEntity = worldObj.getTileEntity(xCoord+directions[i].offsetX,yCoord+directions[i].offsetY,zCoord+directions[i].offsetZ);
+            if (tileEntity!=null && tileEntity instanceof TileConnectable)
+            {
+                makeConnection(directions[i],true);
+            }
+        }
+    }
+
+    public void breakAllConnections()
+    {
+        ForgeDirection[] directions = ForgeDirection.VALID_DIRECTIONS;
+        LogHelper.info("Attempting to break all connections");
+        for (int i=0;i<6;i++)
+        {
+            breakConnection(directions[i],true);
+        }
+    }
+
+
 }

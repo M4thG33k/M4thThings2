@@ -3,6 +3,7 @@ package com.m4thg33k.m4ththings.blocks;
 import com.m4thg33k.m4ththings.helpers.NameHelper;
 import com.m4thg33k.m4ththings.init.ModBlocks;
 import com.m4thg33k.m4ththings.init.ModItems;
+import com.m4thg33k.m4ththings.tiles.TileConnectable;
 import com.m4thg33k.m4ththings.tiles.TileTest;
 import com.m4thg33k.m4ththings.utility.LogHelper;
 import com.sun.org.apache.xpath.internal.operations.Mod;
@@ -11,6 +12,7 @@ import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -90,5 +92,27 @@ public class BlockTest extends Block implements ITileEntityProvider {
             ((TileTest) tileEntity).toggleConnection(ForgeDirection.VALID_DIRECTIONS[side],true);
         }
         return true;
+    }
+
+    @Override
+    public void onBlockPlacedBy(World world, int x, int y, int z, EntityLivingBase entityLivingBase, ItemStack stack) {
+        TileEntity tileEntity = world.getTileEntity(x,y,z);
+
+        if (tileEntity!=null && tileEntity instanceof TileConnectable)
+        {
+            //LogHelper.info("Attempting to connect to neighbors");
+            ((TileConnectable) tileEntity).attemptToConnectToSameType();
+        }
+    }
+
+
+    @Override
+    public void breakBlock(World world, int x, int y, int z, Block block, int meta) {
+        TileEntity tileEntity = world.getTileEntity(x,y,z);
+        if (tileEntity!=null && tileEntity instanceof TileConnectable)
+        {
+            ((TileConnectable) tileEntity).breakAllConnections();
+        }
+        super.breakBlock(world, x, y, z, block, meta);
     }
 }

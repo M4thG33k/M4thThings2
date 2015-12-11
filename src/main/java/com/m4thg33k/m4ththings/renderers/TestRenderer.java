@@ -23,7 +23,8 @@ public class TestRenderer extends TileEntitySpecialRenderer {
     @Override
     public void renderTileEntityAt(TileEntity tile, double x, double y, double z, float f) {
         ItemStack held = this.field_147501_a.field_147551_g.getHeldItem();
-        boolean flag = held == null || !(held.getItem()==ModItems.itemWrench || held.getItem() == Item.getItemFromBlock(ModBlocks.blockTest));
+        //boolean flag = held == null || !(held.getItem()==ModItems.itemWrench || held.getItem() == Item.getItemFromBlock(ModBlocks.blockTest));
+        boolean flag = false; //swap comments to make it invisible when holding the correct item(s)
         if (flag)
         {
             return;

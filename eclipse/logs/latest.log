@@ -1,55 +1,40 @@
-[22:55:07] [main/INFO]: Setting user: Player279
-[22:55:09] [Client thread/INFO]: LWJGL Version: 2.9.1
-[22:55:18] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Not Enough Items, FMLFileResourcePack:M4th Things, FMLFileResourcePack:CoFH Core, FMLFileResourcePack:Extra Utilities, FMLFileResourcePack:Thaumcraft, FMLFileResourcePack:Waila, FMLFileResourcePack:Thermal Dynamics, FMLFileResourcePack:Thermal Expansion, FMLFileResourcePack:Thermal Foundation, FMLFileResourcePack:Baubles
-[22:55:21] [Sound Library Loader/INFO]: Sound engine started
-[22:55:22] [Client thread/INFO]: Created: 16x16 textures/blocks-atlas
-[22:55:22] [Client thread/INFO]: Created: 16x16 textures/items-atlas
-[22:55:25] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Not Enough Items, FMLFileResourcePack:M4th Things, FMLFileResourcePack:CoFH Core, FMLFileResourcePack:Extra Utilities, FMLFileResourcePack:Thaumcraft, FMLFileResourcePack:Waila, FMLFileResourcePack:Thermal Dynamics, FMLFileResourcePack:Thermal Expansion, FMLFileResourcePack:Thermal Foundation, FMLFileResourcePack:Baubles
-[22:55:26] [Client thread/INFO]: Created: 1024x512 textures/blocks-atlas
-[22:55:26] [Client thread/INFO]: Created: 1024x512 textures/items-atlas
-[22:55:27] [Sound Library Loader/INFO]: Sound engine started
-[22:55:35] [Server thread/INFO]: Starting integrated minecraft server version 1.7.10
-[22:55:35] [Server thread/INFO]: Generating keypair
-[22:55:35] [Server thread/INFO]: Preparing start region for level 0
-[22:55:35] [Server thread/INFO]: Changing view distance to 12, from 10
-[22:55:36] [Server thread/INFO]: Player279[local:E:efc4d0b7] logged in with entity id 2 at (2335.550442493881, 4.0, -225.6250895752576)
-[22:55:36] [Server thread/INFO]: Player279 joined the game
-[22:55:46] [Server thread/INFO]: Saving and pausing game...
-[22:55:47] [Server thread/INFO]: Saving chunks for level 'test'/Overworld
-[22:55:47] [Server thread/INFO]: Saving chunks for level 'test'/Nether
-[22:55:47] [Server thread/INFO]: Saving chunks for level 'test'/The End
-[22:55:47] [Server thread/INFO]: Saving chunks for level 'test'/The Outer Lands
-[22:55:47] [Server thread/INFO]: Saving chunks for level 'test'/Underdark
-[22:55:47] [Server thread/INFO]: Saving chunks for level 'test'/The Last Millenium
-[22:55:47] [Server thread/INFO]: Stopping server
-[22:55:47] [Server thread/INFO]: Saving players
-[22:55:47] [Server thread/INFO]: Saving worlds
-[22:55:47] [Server thread/INFO]: Saving chunks for level 'test'/Overworld
-[22:55:47] [Server thread/INFO]: Saving chunks for level 'test'/Nether
-[22:55:47] [Server thread/INFO]: Saving chunks for level 'test'/The End
-[22:55:47] [Server thread/INFO]: Saving chunks for level 'test'/The Outer Lands
-[22:55:47] [Server thread/INFO]: Saving chunks for level 'test'/Underdark
-[22:55:47] [Server thread/INFO]: Saving chunks for level 'test'/The Last Millenium
-[22:55:50] [Server thread/INFO]: Starting integrated minecraft server version 1.7.10
-[22:55:50] [Server thread/INFO]: Generating keypair
-[22:55:50] [Server thread/INFO]: Preparing start region for level 0
-[22:55:50] [Server thread/INFO]: Changing view distance to 12, from 10
-[22:55:50] [Server thread/INFO]: Player279[local:E:73c401e5] logged in with entity id 106 at (2335.500568857196, 4.0, -226.04081238911948)
-[22:55:50] [Server thread/INFO]: Player279 joined the game
-[22:55:55] [Server thread/INFO]: Saving and pausing game...
-[22:55:55] [Server thread/INFO]: Saving chunks for level 'test'/Overworld
-[22:55:55] [Server thread/INFO]: Saving chunks for level 'test'/Nether
-[22:55:55] [Server thread/INFO]: Saving chunks for level 'test'/The End
-[22:55:55] [Server thread/INFO]: Saving chunks for level 'test'/The Outer Lands
-[22:55:55] [Server thread/INFO]: Saving chunks for level 'test'/Underdark
-[22:55:55] [Server thread/INFO]: Saving chunks for level 'test'/The Last Millenium
-[22:55:56] [Server thread/INFO]: Stopping server
-[22:55:56] [Server thread/INFO]: Saving players
-[22:55:56] [Server thread/INFO]: Saving worlds
-[22:55:56] [Server thread/INFO]: Saving chunks for level 'test'/Overworld
-[22:55:56] [Server thread/INFO]: Saving chunks for level 'test'/Nether
-[22:55:56] [Server thread/INFO]: Saving chunks for level 'test'/The End
-[22:55:56] [Server thread/INFO]: Saving chunks for level 'test'/The Outer Lands
-[22:55:56] [Server thread/INFO]: Saving chunks for level 'test'/Underdark
-[22:55:56] [Server thread/INFO]: Saving chunks for level 'test'/The Last Millenium
-[22:55:57] [Client thread/INFO]: Stopping!
+[15:33:38] [main/INFO]: Setting user: Player669
+[15:33:39] [Client thread/INFO]: LWJGL Version: 2.9.1
+[15:33:47] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Not Enough Items, FMLFileResourcePack:M4th Things, FMLFileResourcePack:CoFH Core, FMLFileResourcePack:Extra Utilities, FMLFileResourcePack:Thaumcraft, FMLFileResourcePack:Waila, FMLFileResourcePack:Thermal Dynamics, FMLFileResourcePack:Thermal Expansion, FMLFileResourcePack:Thermal Foundation, FMLFileResourcePack:Baubles
+[15:33:51] [Sound Library Loader/INFO]: Sound engine started
+[15:33:52] [Client thread/INFO]: Created: 16x16 textures/blocks-atlas
+[15:33:52] [Client thread/INFO]: Created: 16x16 textures/items-atlas
+[15:33:54] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Not Enough Items, FMLFileResourcePack:M4th Things, FMLFileResourcePack:CoFH Core, FMLFileResourcePack:Extra Utilities, FMLFileResourcePack:Thaumcraft, FMLFileResourcePack:Waila, FMLFileResourcePack:Thermal Dynamics, FMLFileResourcePack:Thermal Expansion, FMLFileResourcePack:Thermal Foundation, FMLFileResourcePack:Baubles
+[15:33:55] [Client thread/INFO]: Created: 1024x512 textures/blocks-atlas
+[15:33:55] [Client thread/INFO]: Created: 1024x512 textures/items-atlas
+[15:33:56] [Sound Library Loader/INFO]: Sound engine started
+[15:33:59] [Server thread/INFO]: Starting integrated minecraft server version 1.7.10
+[15:33:59] [Server thread/INFO]: Generating keypair
+[15:34:00] [Server thread/INFO]: Preparing start region for level 0
+[15:34:00] [Server thread/INFO]: Changing view distance to 12, from 10
+[15:34:00] [Server thread/INFO]: Player669[local:E:9fd927fb] logged in with entity id 2 at (2334.601142334351, 4.0, -224.9456053997458)
+[15:34:00] [Server thread/INFO]: Player669 joined the game
+[15:34:31] [Server thread/INFO]: Saving and pausing game...
+[15:34:31] [Server thread/INFO]: Saving chunks for level 'test'/Overworld
+[15:34:31] [Server thread/INFO]: Saving chunks for level 'test'/Nether
+[15:34:31] [Server thread/INFO]: Saving chunks for level 'test'/The End
+[15:34:31] [Server thread/INFO]: Saving chunks for level 'test'/The Outer Lands
+[15:34:31] [Server thread/INFO]: Saving chunks for level 'test'/Underdark
+[15:34:31] [Server thread/INFO]: Saving chunks for level 'test'/The Last Millenium
+[15:34:43] [Server thread/INFO]: Saving and pausing game...
+[15:34:43] [Server thread/INFO]: Saving chunks for level 'test'/Overworld
+[15:34:43] [Server thread/INFO]: Saving chunks for level 'test'/Nether
+[15:34:43] [Server thread/INFO]: Saving chunks for level 'test'/The End
+[15:34:43] [Server thread/INFO]: Saving chunks for level 'test'/The Outer Lands
+[15:34:43] [Server thread/INFO]: Saving chunks for level 'test'/Underdark
+[15:34:43] [Server thread/INFO]: Saving chunks for level 'test'/The Last Millenium
+[15:34:43] [Server thread/INFO]: Stopping server
+[15:34:43] [Server thread/INFO]: Saving players
+[15:34:43] [Server thread/INFO]: Saving worlds
+[15:34:43] [Server thread/INFO]: Saving chunks for level 'test'/Overworld
+[15:34:43] [Server thread/INFO]: Saving chunks for level 'test'/Nether
+[15:34:43] [Server thread/INFO]: Saving chunks for level 'test'/The End
+[15:34:43] [Server thread/INFO]: Saving chunks for level 'test'/The Outer Lands
+[15:34:43] [Server thread/INFO]: Saving chunks for level 'test'/Underdark
+[15:34:43] [Server thread/INFO]: Saving chunks for level 'test'/The Last Millenium
+[15:34:45] [Client thread/INFO]: Stopping!
