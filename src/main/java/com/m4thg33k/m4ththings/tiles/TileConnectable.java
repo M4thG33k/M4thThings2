@@ -128,7 +128,9 @@ public class TileConnectable extends TileEntity implements IConnectableSides,IM4
     @Override
     public Packet getDescriptionPacket() {
         prepareSync();
-        return null;
+        NBTTagCompound tagCompound = new NBTTagCompound();
+        this.writeToNBT(tagCompound);
+        return new S35PacketUpdateTileEntity(xCoord,yCoord,zCoord,1,tagCompound);
     }
 
     public void attemptToMakeNeighborConnection(ForgeDirection side)
@@ -166,12 +168,15 @@ public class TileConnectable extends TileEntity implements IConnectableSides,IM4
     public void breakAllConnections()
     {
         ForgeDirection[] directions = ForgeDirection.VALID_DIRECTIONS;
-        LogHelper.info("Attempting to break all connections");
+        //LogHelper.info("Attempting to break all connections");
         for (int i=0;i<6;i++)
         {
             breakConnection(directions[i],true);
         }
     }
 
-
+    @Override
+    public void onDataPacket(NetworkManager net, S35PacketUpdateTileEntity pkt) {
+        this.readFromNBT(pkt.func_148857_g());
+    }
 }

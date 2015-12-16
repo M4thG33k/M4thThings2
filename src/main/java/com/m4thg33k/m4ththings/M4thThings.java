@@ -14,6 +14,8 @@ import cpw.mods.fml.common.event.FMLInterModComms;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
+import java.util.Random;
+
 @Mod(modid = M4thThings.MOD_ID, name = M4thThings.MOD_NAME, version = M4thThings.VERSION)
 public class M4thThings {
 
@@ -21,6 +23,7 @@ public class M4thThings {
     public static final String MOD_NAME = "M4th Things";
     public static final String VERSION = "@VERSION@";
     public static final String CHANNEL_NAME = MOD_ID;
+    public static final Random random = new Random();
 
     @Mod.Instance
     public static M4thThings instance = new M4thThings();
