@@ -12,6 +12,7 @@ public class ModPackets {
     public static void init() {
         INSTANCE.registerMessage(PacketHandlerNBT.class, PacketNBT.class, 0, Side.CLIENT);
         INSTANCE.registerMessage(PacketHandlerFilling.class, PacketFilling.class, 1, Side.CLIENT);
+        INSTANCE.registerMessage(PacketHandlerSpline.class, PacketSpline.class, 2, Side.CLIENT);
     }
 
 }

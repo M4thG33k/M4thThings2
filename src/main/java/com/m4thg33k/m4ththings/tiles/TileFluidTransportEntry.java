@@ -5,12 +5,16 @@ import com.m4thg33k.m4ththings.interfaces.IM4thNBTSync;
 import com.m4thg33k.m4ththings.interfaces.ITransportBlock;
 import com.m4thg33k.m4ththings.packets.ModPackets;
 import com.m4thg33k.m4ththings.packets.PacketNBT;
+import com.m4thg33k.m4ththings.packets.PacketSpline;
 import com.m4thg33k.m4ththings.utility.BasicTools;
+import com.m4thg33k.m4ththings.utility.CubicSplineCreation;
 import com.m4thg33k.m4ththings.utility.LocVec;
+import com.m4thg33k.m4ththings.utility.LogHelper;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.AxisAlignedBB;
+import net.minecraft.util.Vec3;
 import net.minecraftforge.common.util.ForgeDirection;
 import net.minecraftforge.fluids.*;
 
@@ -23,6 +27,7 @@ public class TileFluidTransportEntry extends TileFluidHandler implements IM4thNB
     private int attachedSide;
     ForgeDirection[] directions = ForgeDirection.VALID_DIRECTIONS;
     private int timer;
+    private int randomocity;
 
     public TileFluidTransportEntry()
     {
@@ -30,6 +35,7 @@ public class TileFluidTransportEntry extends TileFluidHandler implements IM4thNB
         attachedSide = ForgeDirection.DOWN.ordinal();
         tank = new FluidTank(8000);
         timer = 0;
+        randomocity = 0;
     }
 
     public TileFluidTransportEntry(int meta)
@@ -38,11 +44,13 @@ public class TileFluidTransportEntry extends TileFluidHandler implements IM4thNB
         attachedSide = ForgeDirection.VALID_DIRECTIONS[meta].ordinal();
         tank = new FluidTank(8000);
         timer = 0;
+        randomocity = 0;
     }
 
     @Override
     public void updateEntity() {
         timer = (timer+1)%5;
+        randomocity = (randomocity+1)%6;
 
         if (!worldObj.isRemote && timer==0)
         {
@@ -69,8 +77,8 @@ public class TileFluidTransportEntry extends TileFluidHandler implements IM4thNB
         {
             return;
         }
-        int randomocity = M4thThings.random.nextInt(6);
-        Stack<LocVec> stack = findPath(randomocity);
+        //int randomocity = M4thThings.random.nextInt(6);
+        Stack<LocVec> stack = findPath();
         if (stack.size()<2)
         {
             return;
@@ -78,9 +86,25 @@ public class TileFluidTransportEntry extends TileFluidHandler implements IM4thNB
         TileEntity tileEntity = BasicTools.getTEAtRelLoc(worldObj,xCoord,yCoord,zCoord,stack.lastElement());
         ForgeDirection fillDir = ((stack.elementAt(stack.size()-2)).difference(stack.lastElement())).direction();
         ForgeDirection drainDir = ((stack.elementAt(1)).difference(stack.firstElement())).direction();
+        FluidStack drained;
         if (tileEntity!=null && tileEntity instanceof IFluidHandler)
         {
-            drain(drainDir,((IFluidHandler) tileEntity).fill(fillDir,tank.getFluid(),true),true);
+            drained = drain(drainDir,((IFluidHandler) tileEntity).fill(fillDir,tank.getFluid(),true),true);
+            if (drained != null && drained.amount>0)
+            {
+                LocVec init = new LocVec(xCoord,yCoord,zCoord);
+                ModPackets.INSTANCE.sendToAllAround(new PacketSpline(BasicTools.stackToIntArray(stack),init.getLoc(),attachedSide), new NetworkRegistry.TargetPoint(worldObj.provider.dimensionId,xCoord,yCoord,zCoord,32));
+
+                //check to make sure each step in our path is adjacent. remove this line before releasing
+                LogHelper.info("Checking my work...");
+                checkWork(stack);
+
+
+
+                //CubicSplineCreation cubicSpline = new CubicSplineCreation(stack,attachedSide,new LocVec(xCoord,yCoord,zCoord));
+                //Vec3[] particleLocations = cubicSpline.allLocations(0.5);
+                //ModPackets.INSTANCE.sendToAllAround(new PacketSpline(BasicTools.Vec3ArrayToString(particleLocations)), new NetworkRegistry.TargetPoint(worldObj.provider.dimensionId,xCoord,yCoord,zCoord,32));
+            }
         }
     }
 
@@ -272,7 +296,7 @@ public class TileFluidTransportEntry extends TileFluidHandler implements IM4thNB
 
     //Begin fluid routing code
 
-    public Stack<LocVec> findPath(int randomocity)
+    public Stack<LocVec> findPath()
     {
         //Vector<LocVec> visited = new Vector<LocVec>();
         //visited.add(new LocVec(0,0,0));
@@ -282,22 +306,30 @@ public class TileFluidTransportEntry extends TileFluidHandler implements IM4thNB
         ITransportBlock transportBlock;
         int index;
         int validate;
+        int currentLevel;
         LocVec searchLocation;
         Vector<LocVec> visited = new Vector<LocVec>();
         Stack<LocVec> stack = new Stack<LocVec>();
+        Stack<Integer> level = new Stack<Integer>();
         Stack<LocVec> path = new Stack<LocVec>();
         LocVec currentLocation = new LocVec(0,0,0);
         stack.push(currentLocation);
+        level.push(0);
         while (stack.size()!=0)
         {
             currentLocation = stack.pop();
+            currentLevel = level.pop();
+            while (path.size()>currentLevel)
+            {
+                path.pop();
+            }
             if (!visited.contains(currentLocation)) {
                 visited.add(currentLocation);
                 path.push(currentLocation);
                 transportBlock = (ITransportBlock) BasicTools.getTEAtRelLoc(worldObj, xCoord, yCoord, zCoord, currentLocation);
 
                 for (int i = 0; i < 6; i++) {
-                    index = (i+randomocity)%6;
+                    index = i;//(i+randomocity)%6;
                     searchLocation = currentLocation.copy();
                     searchLocation.addVec(directions[index]);
                     if (visited.contains(searchLocation)) //if we've already been here, skip the rest of the calculations
@@ -310,6 +342,7 @@ public class TileFluidTransportEntry extends TileFluidHandler implements IM4thNB
                         if ((validate & 2) != 2) //we are not connecting to an IFluidHandler
                         {
                             stack.push(searchLocation);
+                            level.push(path.size());
                         }
                         else
                         {
@@ -330,5 +363,18 @@ public class TileFluidTransportEntry extends TileFluidHandler implements IM4thNB
     @Override
     public AxisAlignedBB getRenderBoundingBox() {
         return AxisAlignedBB.getBoundingBox(xCoord,yCoord,zCoord,xCoord+1,yCoord+1,zCoord+1);
+    }
+
+    private void checkWork(Stack<LocVec> stack)
+    {
+        int norm;
+        for (int i=0;i<stack.size()-1;i++)
+        {
+            norm = (stack.elementAt(i+1).difference(stack.elementAt(i))).oneNorm();
+            if (norm!=1)
+            {
+                LogHelper.info("Something ain't right...");
+            }
+        }
     }
 }

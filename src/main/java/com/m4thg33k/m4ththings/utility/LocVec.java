@@ -1,5 +1,6 @@
 package com.m4thg33k.m4ththings.utility;
 
+import net.minecraft.util.Vec3;
 import net.minecraftforge.common.util.ForgeDirection;
 
 import java.util.Arrays;
@@ -106,7 +107,9 @@ public class LocVec {
     public LocVec difference(LocVec input)
     {
         LocVec toReturn = this.copy();
-        int[] in = input.getLoc();
+        //int[] in = input.getLoc();
+        int[] in = new int[3];
+        System.arraycopy(input.getLoc(),0,in,0,3);
         for (int i=0;i<3;i++)
         {
             in[i] = -in[i];
@@ -143,5 +146,21 @@ public class LocVec {
             return ForgeDirection.EAST;
         }
         return ForgeDirection.UNKNOWN;
+    }
+
+    public Vec3 getVec3()
+    {
+        return Vec3.createVectorHelper(loc[0],loc[1],loc[2]);
+    }
+
+    public int oneNorm()
+    {
+        int total = 0;
+        for (int i=0;i<3;i++)
+        {
+            total += Math.abs(loc[i]);
+        }
+
+        return total;
     }
 }

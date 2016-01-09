@@ -4,23 +4,29 @@
     <bookmark url="file://$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/blocks/tanks/BlockBaseTank.java" line="169" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2f402229-1e85-4ebc-b120-ed2c2c65bce5" name="Default" comment="Got the testBlocks to work correctly; ground-breaking for the fluid manipulation system">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/assets/m4ththings/models/FluidTransportEntryPoint.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/assets/m4ththings/models/FluidTransportEntrySideOverlay.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/assets/m4ththings/models/FluidTransportEntryTopOverlay.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/assets/m4ththings/models/FluidTransportEntryPoint.obj" />
+    <list default="true" id="2f402229-1e85-4ebc-b120-ed2c2c65bce5" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/packets/PacketHandlerSpline.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/packets/PacketSpline.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/particles/ParticleFluidTransfer.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/utility/CubicSplineCreation.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eclipse/saves/Test/DIM-1/data/villages.dat" afterPath="$PROJECT_DIR$/eclipse/saves/Test/DIM-1/data/villages.dat" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eclipse/saves/Test/DIM1/data/villages.dat" afterPath="$PROJECT_DIR$/eclipse/saves/Test/DIM1/data/villages.dat" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eclipse/saves/Test/data/villages.dat" afterPath="$PROJECT_DIR$/eclipse/saves/Test/data/villages.dat" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eclipse/saves/Test/level.dat" afterPath="$PROJECT_DIR$/eclipse/saves/Test/level.dat" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eclipse/saves/Test/level.dat_old" afterPath="$PROJECT_DIR$/eclipse/saves/Test/level.dat_old" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eclipse/saves/Test/session.lock" afterPath="$PROJECT_DIR$/eclipse/saves/Test/session.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eclipse/logs/fml-client-latest.log" afterPath="$PROJECT_DIR$/eclipse/logs/fml-client-latest.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eclipse/logs/fml-junk-earlystartup.log" afterPath="$PROJECT_DIR$/eclipse/logs/fml-junk-earlystartup.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eclipse/logs/latest.log" afterPath="$PROJECT_DIR$/eclipse/logs/latest.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eclipse/usernamecache.json" afterPath="$PROJECT_DIR$/eclipse/usernamecache.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/packets/ModPackets.java" afterPath="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/packets/ModPackets.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/particles/ParticleManager.java" afterPath="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/particles/ParticleManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/proxies/ClientProxy.java" afterPath="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/proxies/ClientProxy.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/proxies/CommonProxy.java" afterPath="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/proxies/CommonProxy.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/tiles/TileFluidTransportEntry.java" afterPath="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/tiles/TileFluidTransportEntry.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/utility/BasicTools.java" afterPath="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/utility/BasicTools.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/utility/LocVec.java" afterPath="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/utility/LocVec.java" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -41,32 +47,72 @@
     <window id="1">
       <content type="file-editors">
         <state>
-          <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-            <file leaf-file-name="BaseTankRenderer.java" pinned="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/renderers/BaseTankRenderer.java">
+          <leaf>
+            <file leaf-file-name="Vec3.java" pinned="false" current-in-tab="false">
+              <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1558-1.7.10/forgeSrc-1.7.10-10.13.4.1558-1.7.10-sources.jar!/net/minecraft/util/Vec3.java">
                 <provider selected="true" editor-type-id="text-editor">
                   <state vertical-scroll-proportion="0.0">
-                    <caret line="46" column="9" selection-start-line="46" selection-start-column="9" selection-end-line="46" selection-end-column="9" />
+                    <caret line="57" column="16" selection-start-line="57" selection-start-column="16" selection-end-line="57" selection-end-column="16" />
                     <folding />
                   </state>
                 </provider>
               </entry>
             </file>
-            <file leaf-file-name="ForgeDirection.java" pinned="false" current-in-tab="true">
-              <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1558-1.7.10/forgeSrc-1.7.10-10.13.4.1558-1.7.10-sources.jar!/net/minecraftforge/common/util/ForgeDirection.java">
+            <file leaf-file-name="PacketFilling.java" pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/packets/PacketFilling.java">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state vertical-scroll-proportion="0.026356589">
-                    <caret line="23" column="54" selection-start-line="23" selection-start-column="54" selection-end-line="23" selection-end-column="54" />
+                  <state vertical-scroll-proportion="0.0">
+                    <caret line="54" column="5" selection-start-line="54" selection-start-column="5" selection-end-line="54" selection-end-column="5" />
                     <folding />
                   </state>
                 </provider>
               </entry>
             </file>
-            <file leaf-file-name="Block.java" pinned="false" current-in-tab="false">
-              <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1558-1.7.10/forgeSrc-1.7.10-10.13.4.1558-1.7.10-sources.jar!/net/minecraft/block/Block.java">
+            <file leaf-file-name="PacketHandlerFilling.java" pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/packets/PacketHandlerFilling.java">
                 <provider selected="true" editor-type-id="text-editor">
                   <state vertical-scroll-proportion="0.0">
-                    <caret line="657" column="38" selection-start-line="657" selection-start-column="29" selection-end-line="657" selection-end-column="38" />
+                    <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+                    <folding />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="TileBaseTank.java" pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/tiles/tanks/TileBaseTank.java">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state vertical-scroll-proportion="0.0">
+                    <caret line="207" column="9" selection-start-line="207" selection-start-column="9" selection-end-line="207" selection-end-column="9" />
+                    <folding />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="World.java" pinned="false" current-in-tab="false">
+              <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1558-1.7.10/forgeSrc-1.7.10-10.13.4.1558-1.7.10-sources.jar!/net/minecraft/world/World.java">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state vertical-scroll-proportion="0.0">
+                    <caret line="1475" column="7" selection-start-line="1475" selection-start-column="7" selection-end-line="1475" selection-end-column="7" />
+                    <folding />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="ParticleFluidOrb.java" pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/particles/ParticleFluidOrb.java">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state vertical-scroll-proportion="0.0">
+                    <caret line="45" column="64" selection-start-line="45" selection-start-column="64" selection-end-line="45" selection-end-column="64" />
+                    <folding />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="System.java" pinned="false" current-in-tab="true">
+              <entry file="jar://F:/Programs/jdk_8_65/src.zip!/java/lang/System.java">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state vertical-scroll-proportion="0.9986649">
+                    <caret line="517" column="50" selection-start-line="517" selection-start-column="50" selection-end-line="517" selection-end-column="50" />
                     <folding />
                   </state>
                 </provider>
@@ -143,11 +189,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="TileFluidTransportEntry.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="TileFluidTransportEntry.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/tiles/TileFluidTransportEntry.java">
           <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.42619926">
+              <caret line="320" column="0" selection-start-line="320" selection-start-column="0" selection-end-line="320" selection-end-column="0" />
+              <folding>
+                <element signature="e#10357#10366#0" expanded="true" />
+                <element signature="e#10408#10416#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ParticleFluidTransfer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/particles/ParticleFluidTransfer.java">
+          <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="165" column="0" selection-start-line="165" selection-start-column="0" selection-end-line="165" selection-end-column="0" />
+              <caret line="99" column="0" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -155,11 +214,64 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BlockFluidTransportEntry.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/blocks/BlockFluidTransportEntry.java">
+      <file leaf-file-name="CubicSplineCreation.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/utility/CubicSplineCreation.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="160" column="67" selection-start-line="160" selection-start-column="67" selection-end-line="160" selection-end-column="67" />
+              <caret line="47" column="111" selection-start-line="47" selection-start-column="111" selection-end-line="47" selection-end-column="111" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BasicTools.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/utility/BasicTools.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="142" column="21" selection-start-line="142" selection-start-column="21" selection-end-line="142" selection-end-column="21" />
+              <folding>
+                <element signature="e#3759#3767#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PacketSpline.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/packets/PacketSpline.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="51" column="32" selection-start-line="51" selection-start-column="32" selection-end-line="51" selection-end-column="32" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1181#1182#0" expanded="true" />
+                <element signature="e#1208#1209#0" expanded="true" />
+                <element signature="e#1242#1243#0" expanded="true" />
+                <element signature="e#1269#1270#0" expanded="true" />
+                <element signature="e#1309#1310#0" expanded="true" />
+                <element signature="e#1344#1345#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LocVec.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/utility/LocVec.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="117" column="0" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
+              <folding>
+                <element signature="e#2830#2831#0" expanded="true" />
+                <element signature="e#2898#2899#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PacketHandlerSpline.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/packets/PacketHandlerSpline.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="12" column="20" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -167,11 +279,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FluidTransportEntryRenderer.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/renderers/FluidTransportEntryRenderer.java">
+      <file leaf-file-name="ClientProxy.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/proxies/ClientProxy.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6613833">
-              <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="69" column="39" selection-start-line="69" selection-start-column="39" selection-end-line="69" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ParticleManager.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/particles/ParticleManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="134" column="23" selection-start-line="134" selection-start-column="23" selection-end-line="134" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TransportBlockRenderer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/renderers/TransportBlockRenderer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="24" column="10" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -747,14 +879,7 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/packets/PacketNBT.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/particles/ParticleFluidOrb.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/helpers/MathHelper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/packets/PacketFilling.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/proxies/CommonProxy.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/packets/PacketHandlerFilling.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/packets/ModPackets.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/proxies/ClientProxy.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/helpers/ChatHelper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/helpers/StringHelper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/items/ItemModIngot.java" />
@@ -772,7 +897,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/items/ItemBaseTank.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/init/ModRecipes.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/tiles/tanks/TileAdvancedTank.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/particles/ParticleManager.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/renderers/BaseTankRenderer.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/utility/WailaInteraction.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/renderers/CubeRenderer.java" />
@@ -788,16 +912,24 @@
         <option value="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/init/ModTiles.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/init/ModBlocks.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/init/ModRenderers.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/renderers/TransportBlockRenderer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/utility/BasicTools.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/interfaces/ITransportBlock.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/utility/LocVec.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/M4thThings.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/tiles/TileTransportBlock.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/blocks/BlockTransportBlock.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/tiles/TileFluidTransportEntry.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/blocks/BlockFluidTransportEntry.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/renderers/FluidTransportEntryRenderer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/proxies/CommonProxy.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/packets/PacketHandlerSpline.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/packets/ModPackets.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/particles/ParticleManager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/particles/ParticleFluidTransfer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/packets/PacketSpline.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/utility/BasicTools.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/utility/LocVec.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/proxies/ClientProxy.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/utility/CubicSplineCreation.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/renderers/TransportBlockRenderer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/tiles/TileFluidTransportEntry.java" />
       </list>
     </option>
   </component>
@@ -844,7 +976,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -1489,7 +1621,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -1502,7 +1634,7 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.editor" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="SearchEverywhereHistoryKey" value="Forge&#9;FILE&#9;jar://C:/Users/Josiah/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1558-1.7.10/forgeSrc-1.7.10-10.13.4.1558-1.7.10-sources.jar!/net/minecraftforge/common/util/ForgeDirection.java&#10;ForgeD&#9;PSI&#9;JAVA://net.minecraftforge.common.util.ForgeDirection&#10;Stair&#9;PSI&#9;JAVA://net.minecraft.world.gen.structure.StructureMineshaftPieces.Stairs&#10;ISB&#9;PSI&#9;JAVA://cpw.mods.fml.client.registry.ISimpleBlockRenderingHandler&#10;GL11&#9;PSI&#9;JAVA://org.lwjgl.opengl.GL11&#10;World&#9;PSI&#9;JAVA://net.minecraft.world.World&#10;IItemRe&#9;PSI&#9;JAVA://net.minecraftforge.client.IItemRenderer&#10;FluidCon&#9;PSI&#9;JAVA://net.minecraftforge.fluids.ItemFluidContainer&#10;bucket&#9;PSI&#9;JAVA://net.minecraft.item.ItemBucket&#10;dispenser&#9;PSI&#9;JAVA://net.minecraft.tileentity.TileEntityDispenser&#10;water&#9;PSI&#9;JAVA://net.minecraft.init.Blocks#water&#10;BlockFlui&#9;PSI&#9;JAVA://net.minecraftforge.fluids.BlockFluidBase&#10;water_&#9;PSI&#9;JAVA://net.minecraft.init.Items#water_bucket&#10;Items&#9;PSI&#9;JAVA://net.minecraft.init.Items&#10;ForgeDirection&#9;PSI&#9;JAVA://net.minecraftforge.common.util.ForgeDirection" />
+    <property name="SearchEverywhereHistoryKey" value="attempt&#9;PSI&#9;JAVA://com.m4thg33k.m4ththings.tiles.TileFluidTransportEntry#attemptPlace&#10;Vec3&#9;PSI&#9;JAVA://net.minecraft.util.Vec3&#10;ForgeD&#9;PSI&#9;JAVA://net.minecraftforge.common.util.ForgeDirection&#10;Forge&#9;FILE&#9;jar://C:/Users/Josiah/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1558-1.7.10/forgeSrc-1.7.10-10.13.4.1558-1.7.10-sources.jar!/net/minecraftforge/common/util/ForgeDirection.java&#10;Stair&#9;PSI&#9;JAVA://net.minecraft.world.gen.structure.StructureMineshaftPieces.Stairs&#10;ISB&#9;PSI&#9;JAVA://cpw.mods.fml.client.registry.ISimpleBlockRenderingHandler&#10;GL11&#9;PSI&#9;JAVA://org.lwjgl.opengl.GL11&#10;World&#9;PSI&#9;JAVA://net.minecraft.world.World&#10;IItemRe&#9;PSI&#9;JAVA://net.minecraftforge.client.IItemRenderer&#10;FluidCon&#9;PSI&#9;JAVA://net.minecraftforge.fluids.ItemFluidContainer&#10;bucket&#9;PSI&#9;JAVA://net.minecraft.item.ItemBucket&#10;dispenser&#9;PSI&#9;JAVA://net.minecraft.tileentity.TileEntityDispenser&#10;water&#9;PSI&#9;JAVA://net.minecraft.init.Blocks#water&#10;BlockFlui&#9;PSI&#9;JAVA://net.minecraftforge.fluids.BlockFluidBase&#10;water_&#9;PSI&#9;JAVA://net.minecraft.init.Items#water_bucket&#10;Items&#9;PSI&#9;JAVA://net.minecraft.init.Items&#10;ForgeDirection&#9;PSI&#9;JAVA://net.minecraftforge.common.util.ForgeDirection" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -2015,7 +2147,9 @@
       <workItem from="1450204263146" duration="14358000" />
       <workItem from="1450296457312" duration="59000" />
       <workItem from="1450296597496" duration="486000" />
-      <workItem from="1450303004683" duration="210000" />
+      <workItem from="1450303004683" duration="1437000" />
+      <workItem from="1452277499171" duration="7730000" />
+      <workItem from="1452306102724" duration="18083000" />
     </task>
     <task id="LOCAL-00001" summary="Added the basic tank again; not fully operational, but it's there!">
       <created>1449093117311</created>
@@ -2071,15 +2205,21 @@
       <option name="project" value="LOCAL" />
       <updated>1449869739556</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Adding more resources to the repository">
+      <created>1450303232785</created>
+      <option name="number" value="00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1450303232785</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="149200000" />
+    <option name="totallyTimeSpent" value="176240000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1" y="1" width="1918" height="1038" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -2088,17 +2228,17 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20220995" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20220995" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919955" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19052745" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19052745" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32938644" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25856355" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37016574" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -2152,284 +2292,35 @@
     <MESSAGE value="Added assets to the repository" />
     <MESSAGE value="Added the lib and mods folders to the repository." />
     <MESSAGE value="Got the testBlocks to work correctly; ground-breaking for the fluid manipulation system" />
-    <option name="LAST_COMMIT_MESSAGE" value="Got the testBlocks to work correctly; ground-breaking for the fluid manipulation system" />
+    <MESSAGE value="Adding more resources to the repository" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding more resources to the repository" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="87" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/tiles/TileFluidTransportEntry.java</url>
+          <line>375</line>
+          <properties />
+          <option name="timeStamp" value="119" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="124" />
     </breakpoint-manager>
-    <watches-manager />
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="stack" />
+        <watch expression="path" />
+        <watch expression="level" />
+        <watch expression="1 = {LocVec@7445} " />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/renderers/FluidTransportEntryRenderer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="105" column="26" selection-start-line="105" selection-start-column="26" selection-end-line="105" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1558-1.7.10/forgeSrc-1.7.10-10.13.4.1558-1.7.10-sources.jar!/net/minecraft/block/BlockStairs.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="49" column="23" selection-start-line="49" selection-start-column="23" selection-end-line="49" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1558-1.7.10/forgeSrc-1.7.10-10.13.4.1558-1.7.10-sources.jar!/net/minecraft/block/BlockLever.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="258" column="16" selection-start-line="258" selection-start-column="16" selection-end-line="258" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1558-1.7.10/forgeSrc-1.7.10-10.13.4.1558-1.7.10-sources.jar!/net/minecraft/block/BlockDirectional.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="22" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
-          <folding>
-            <element signature="e#340#341#0" expanded="true" />
-            <element signature="e#378#379#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1558-1.7.10/forgeSrc-1.7.10-10.13.4.1558-1.7.10-sources.jar!/net/minecraft/block/BlockPumpkin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/renderers/BaseTankRenderer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="46" column="9" selection-start-line="46" selection-start-column="9" selection-end-line="46" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1558-1.7.10/forgeSrc-1.7.10-10.13.4.1558-1.7.10-sources.jar!/net/minecraftforge/common/util/ForgeDirection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1558-1.7.10/forgeSrc-1.7.10-10.13.4.1558-1.7.10-sources.jar!/net/minecraft/world/World.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.275862">
-          <caret line="1173" column="138" selection-start-line="1173" selection-start-column="138" selection-end-line="1173" selection-end-column="138" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1558-1.7.10/forgeSrc-1.7.10-10.13.4.1558-1.7.10-sources.jar!/net/minecraft/world/IBlockAccess.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.096045196">
-          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1558-1.7.10/forgeSrc-1.7.10-10.13.4.1558-1.7.10-sources.jar!/cpw/mods/fml/client/registry/ISimpleBlockRenderingHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1440678">
-          <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/interfaces/IM4thNBTSync.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="23" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/proxies/ClientProxy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="39" column="56" selection-start-line="39" selection-start-column="56" selection-end-line="39" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/tiles/TileTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/blocks/tanks/BlockBaseTank.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="63" column="20" selection-start-line="63" selection-start-column="17" selection-end-line="63" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1558-1.7.10/forgeSrc-1.7.10-10.13.4.1558-1.7.10-sources.jar!/net/minecraft/network/play/server/S35PacketUpdateTileEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="22" column="98" selection-start-line="22" selection-start-column="98" selection-end-line="22" selection-end-column="98" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/interfaces/IConnectableSides.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="61" selection-start-line="12" selection-start-column="61" selection-end-line="12" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/tiles/tanks/TileBaseTank.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="189" column="8" selection-start-line="189" selection-start-column="8" selection-end-line="194" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/blocks/BlockTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="20" selection-start-line="43" selection-start-column="4" selection-end-line="116" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/renderers/TestRenderer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="44" column="9" selection-start-line="24" selection-start-column="8" selection-end-line="44" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1558-1.7.10/forgeSrc-1.7.10-10.13.4.1558-1.7.10-sources.jar!/net/minecraft/block/ITileEntityProvider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="15" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/init/ModRenderers.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="24" column="116" selection-start-line="24" selection-start-column="116" selection-end-line="24" selection-end-column="116" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/tiles/TileConnectable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="124" column="9" selection-start-line="118" selection-start-column="8" selection-end-line="124" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1558-1.7.10/forgeSrc-1.7.10-10.13.4.1558-1.7.10-sources.jar!/net/minecraft/world/gen/structure/StructureMineshaftPieces.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="3.7190201">
-          <caret line="751" column="24" selection-start-line="751" selection-start-column="24" selection-end-line="751" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/init/ModBlocks.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/init/ModTiles.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2939481">
-          <caret line="18" column="40" selection-start-line="18" selection-start-column="40" selection-end-line="18" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/renderers/TransportBlockRenderer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="24" column="10" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1558-1.7.10/forgeSrc-1.7.10-10.13.4.1558-1.7.10-sources.jar!/net/minecraftforge/fluids/TileFluidHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/utility/BasicTools.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="37" column="84" selection-start-line="37" selection-start-column="84" selection-end-line="37" selection-end-column="84" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/interfaces/ITransportBlock.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="17" column="72" selection-start-line="17" selection-start-column="72" selection-end-line="17" selection-end-column="72" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1558-1.7.10/forgeSrc-1.7.10-10.13.4.1558-1.7.10-sources.jar!/net/minecraft/tileentity/TileEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="106" column="16" selection-start-line="106" selection-start-column="16" selection-end-line="106" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/utility/LocVec.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="144" column="38" selection-start-line="144" selection-start-column="38" selection-end-line="144" selection-end-column="38" />
-          <folding>
-            <element signature="e#345#346#0" expanded="false" />
-            <element signature="e#417#418#0" expanded="false" />
-            <element signature="e#452#453#0" expanded="false" />
-            <element signature="e#478#479#0" expanded="false" />
-            <element signature="e#507#508#0" expanded="false" />
-            <element signature="e#536#537#0" expanded="false" />
-            <element signature="e#571#572#0" expanded="false" />
-            <element signature="e#597#598#0" expanded="false" />
-            <element signature="e#626#627#0" expanded="false" />
-            <element signature="e#655#656#0" expanded="false" />
-            <element signature="e#690#691#0" expanded="false" />
-            <element signature="e#716#717#0" expanded="false" />
-            <element signature="e#745#746#0" expanded="false" />
-            <element signature="e#774#775#0" expanded="false" />
-            <element signature="e#817#818#0" expanded="false" />
-            <element signature="e#889#890#0" expanded="false" />
-            <element signature="e#1039#1040#0" expanded="false" />
-            <element signature="e#1065#1066#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/M4thThings.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="25" column="53" selection-start-line="25" selection-start-column="53" selection-end-line="25" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/tiles/TileTransportBlock.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -2442,7 +2333,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="99" column="75" selection-start-line="99" selection-start-column="75" selection-end-line="99" selection-end-column="75" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2458,7 +2349,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2466,10 +2356,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="13" column="22" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
-          <folding>
-            <element signature="e#340#341#0" expanded="true" />
-            <element signature="e#378#379#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2477,7 +2363,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="258" column="16" selection-start-line="258" selection-start-column="16" selection-end-line="258" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2485,7 +2370,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="49" column="23" selection-start-line="49" selection-start-column="23" selection-end-line="49" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2525,32 +2409,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/tiles/TileFluidTransportEntry.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="165" column="0" selection-start-line="165" selection-start-column="0" selection-end-line="165" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/items/ItemWrench.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5964912">
           <caret line="17" column="23" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
           <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/blocks/BlockFluidTransportEntry.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="160" column="67" selection-start-line="160" selection-start-column="67" selection-end-line="160" selection-end-column="67" />
-          <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2559,31 +2423,518 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="46" column="9" selection-start-line="46" selection-start-column="9" selection-end-line="46" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1558-1.7.10/forgeSrc-1.7.10-10.13.4.1558-1.7.10-sources.jar!/net/minecraftforge/common/util/ForgeDirection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.026356589">
-          <caret line="23" column="54" selection-start-line="23" selection-start-column="54" selection-end-line="23" selection-end-column="54" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1558-1.7.10/forgeSrc-1.7.10-10.13.4.1558-1.7.10-sources.jar!/net/minecraft/block/Block.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="14.417054">
           <caret line="657" column="38" selection-start-line="657" selection-start-column="29" selection-end-line="657" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#3392#3393#0" expanded="false" />
+            <element signature="e#3434#3435#0" expanded="false" />
+            <element signature="e#3482#3483#0" expanded="false" />
+            <element signature="e#3525#3526#0" expanded="false" />
+            <element signature="e#4219#4220#0" expanded="false" />
+            <element signature="e#4260#4261#0" expanded="false" />
+            <element signature="e#4619#4620#0" expanded="false" />
+            <element signature="e#4661#4662#0" expanded="false" />
+            <element signature="e#4709#4710#0" expanded="false" />
+            <element signature="e#4759#4760#0" expanded="false" />
+            <element signature="e#6761#6762#0" expanded="false" />
+            <element signature="e#6825#6826#0" expanded="false" />
+            <element signature="e#7074#7075#0" expanded="false" />
+            <element signature="e#7142#7143#0" expanded="false" />
+            <element signature="e#7682#7683#0" expanded="false" />
+            <element signature="e#7716#7717#0" expanded="false" />
+            <element signature="e#7756#7757#0" expanded="false" />
+            <element signature="e#7796#7797#0" expanded="false" />
+            <element signature="e#7868#7869#0" expanded="false" />
+            <element signature="e#7909#7910#0" expanded="false" />
+            <element signature="e#8036#8037#0" expanded="false" />
+            <element signature="e#8074#8075#0" expanded="false" />
+            <element signature="e#8213#8214#0" expanded="false" />
+            <element signature="e#8262#8263#0" expanded="false" />
+            <element signature="e#8303#8304#0" expanded="false" />
+            <element signature="e#8344#8345#0" expanded="false" />
+            <element signature="e#8400#8401#0" expanded="false" />
+            <element signature="e#8463#8464#0" expanded="false" />
+            <element signature="e#42139#42140#0" expanded="false" />
+            <element signature="e#42227#42228#0" expanded="false" />
+            <element signature="e#42559#42560#0" expanded="false" />
+            <element signature="e#42586#42587#0" expanded="false" />
+            <element signature="e#42885#42886#0" expanded="false" />
+            <element signature="e#42909#42910#0" expanded="false" />
+            <element signature="e#44192#44193#0" expanded="false" />
+            <element signature="e#44235#44236#0" expanded="false" />
+            <element signature="e#44334#44335#0" expanded="false" />
+            <element signature="e#44373#44374#0" expanded="false" />
+            <element signature="e#47424#47425#0" expanded="false" />
+            <element signature="e#47461#47462#0" expanded="false" />
+            <element signature="e#48870#48871#0" expanded="false" />
+            <element signature="e#48921#48922#0" expanded="false" />
+            <element signature="e#49703#49704#0" expanded="false" />
+            <element signature="e#49730#49731#0" expanded="false" />
+            <element signature="e#50017#50018#0" expanded="false" />
+            <element signature="e#50059#50060#0" expanded="false" />
+            <element signature="e#50194#50195#0" expanded="false" />
+            <element signature="e#50221#50222#0" expanded="false" />
+            <element signature="e#51338#51339#0" expanded="false" />
+            <element signature="e#51363#51364#0" expanded="false" />
+            <element signature="e#52026#52027#0" expanded="false" />
+            <element signature="e#52050#52051#0" expanded="false" />
+            <element signature="e#55919#55920#0" expanded="false" />
+            <element signature="e#55943#55944#0" expanded="false" />
+            <element signature="e#56110#56111#0" expanded="false" />
+            <element signature="e#56160#56161#0" expanded="false" />
+            <element signature="e#61420#61421#0" expanded="false" />
+            <element signature="e#61444#61445#0" expanded="false" />
+            <element signature="e#63942#63943#0" expanded="false" />
+            <element signature="e#63974#63975#0" expanded="false" />
+            <element signature="e#64089#64090#0" expanded="false" />
+            <element signature="e#64121#64122#0" expanded="false" />
+            <element signature="e#64236#64237#0" expanded="false" />
+            <element signature="e#64268#64269#0" expanded="false" />
+            <element signature="e#64383#64384#0" expanded="false" />
+            <element signature="e#64415#64416#0" expanded="false" />
+            <element signature="e#64530#64531#0" expanded="false" />
+            <element signature="e#64562#64563#0" expanded="false" />
+            <element signature="e#64677#64678#0" expanded="false" />
+            <element signature="e#64709#64710#0" expanded="false" />
+            <element signature="e#64774#64775#0" expanded="false" />
+            <element signature="e#64805#64806#0" expanded="false" />
+            <element signature="e#64974#64975#0" expanded="false" />
+            <element signature="e#65005#65006#0" expanded="false" />
+            <element signature="e#65681#65682#0" expanded="false" />
+            <element signature="e#65709#65710#0" expanded="false" />
+            <element signature="e#69095#69096#0" expanded="false" />
+            <element signature="e#69122#69123#0" expanded="false" />
+            <element signature="e#69849#69850#0" expanded="false" />
+            <element signature="e#69939#69940#0" expanded="false" />
+            <element signature="e#70086#70087#0" expanded="false" />
+            <element signature="e#70139#70140#0" expanded="false" />
+            <element signature="e#70476#70477#0" expanded="false" />
+            <element signature="e#70515#70516#0" expanded="false" />
+            <element signature="e#70920#70921#0" expanded="false" />
+            <element signature="e#70983#70984#0" expanded="false" />
+            <element signature="e#71156#71157#0" expanded="false" />
+            <element signature="e#71217#71218#0" expanded="false" />
+            <element signature="e#72828#72829#0" expanded="false" />
+            <element signature="e#72876#72877#0" expanded="false" />
+            <element signature="e#73534#73535#0" expanded="false" />
+            <element signature="e#73562#73563#0" expanded="false" />
+            <element signature="e#73604#73605#0" expanded="false" />
+            <element signature="e#73631#73632#0" expanded="false" />
+            <element signature="e#73778#73779#0" expanded="false" />
+            <element signature="e#73805#73806#0" expanded="false" />
+            <element signature="e#73868#73869#0" expanded="false" />
+            <element signature="e#73910#73911#0" expanded="false" />
+            <element signature="e#74398#74399#0" expanded="false" />
+            <element signature="e#74426#74427#0" expanded="false" />
+            <element signature="e#75219#75220#0" expanded="false" />
+            <element signature="e#75280#75281#0" expanded="false" />
+            <element signature="e#75631#75632#0" expanded="false" />
+            <element signature="e#75658#75659#0" expanded="false" />
+            <element signature="e#77030#77031#0" expanded="false" />
+            <element signature="e#77058#77059#0" expanded="false" />
+            <element signature="e#79324#79325#0" expanded="false" />
+            <element signature="e#79376#79377#0" expanded="false" />
+            <element signature="e#79764#79765#0" expanded="false" />
+            <element signature="e#79792#79793#0" expanded="false" />
+            <element signature="e#80301#80302#0" expanded="false" />
+            <element signature="e#80353#80354#0" expanded="false" />
+            <element signature="e#85292#85293#0" expanded="false" />
+            <element signature="e#85329#85330#0" expanded="false" />
+            <element signature="e#92309#92310#0" expanded="false" />
+            <element signature="e#92337#92338#0" expanded="false" />
+            <element signature="e#92723#92724#0" expanded="false" />
+            <element signature="e#92778#92779#0" expanded="false" />
+            <element signature="e#93172#93173#0" expanded="false" />
+            <element signature="e#93211#93212#0" expanded="false" />
+            <element signature="e#93476#93477#0" expanded="false" />
+            <element signature="e#93505#93506#0" expanded="false" />
+            <element signature="e#94059#94060#0" expanded="false" />
+            <element signature="e#94096#94097#0" expanded="false" />
+            <element signature="e#97202#97203#0" expanded="false" />
+            <element signature="e#97253#97254#0" expanded="false" />
+            <element signature="e#98415#98416#0" expanded="false" />
+            <element signature="e#98443#98444#0" expanded="false" />
+            <element signature="e#104965#104966#0" expanded="false" />
+            <element signature="e#105005#105006#0" expanded="false" />
+            <element signature="e#108344#108345#0" expanded="false" />
+            <element signature="e#108399#108400#0" expanded="false" />
+            <element signature="e#109409#109410#0" expanded="false" />
+            <element signature="e#109433#109434#0" expanded="false" />
+            <element signature="e#110672#110673#0" expanded="false" />
+            <element signature="e#110709#110710#0" expanded="false" />
+            <element signature="e#111172#111173#0" expanded="false" />
+            <element signature="e#111200#111201#0" expanded="false" />
+            <element signature="e#112572#112573#0" expanded="false" />
+            <element signature="e#112616#112617#0" expanded="false" />
+            <element signature="e#112946#112947#0" expanded="false" />
+            <element signature="e#112991#112992#0" expanded="false" />
+            <element signature="e#114915#114916#0" expanded="false" />
+            <element signature="e#114965#114966#0" expanded="false" />
+            <element signature="e#115016#115017#0" expanded="false" />
+            <element signature="e#115069#115070#0" expanded="false" />
+            <element signature="e#115245#115246#0" expanded="false" />
+            <element signature="e#115307#115308#0" expanded="false" />
+            <element signature="e#115370#115371#0" expanded="false" />
+            <element signature="e#115433#115434#0" expanded="false" />
+            <element signature="e#115490#115491#0" expanded="false" />
+            <element signature="e#115549#115550#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://F:/Programs/jdk_8_65/jre/lib/rt.jar!/sun/nio/ch/WindowsSelectorImpl.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3474026">
+          <caret line="461" column="27" selection-start-line="461" selection-start-column="27" selection-end-line="461" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1558-1.7.10/forgeSrc-1.7.10-10.13.4.1558-1.7.10-sources.jar!/net/minecraftforge/fluids/TileFluidHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="51" column="22" selection-start-line="51" selection-start-column="22" selection-end-line="51" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#872#873#0" expanded="false" />
+            <element signature="e#922#923#0" expanded="false" />
+            <element signature="e#1442#1443#0" expanded="false" />
+            <element signature="e#1469#1470#0" expanded="false" />
+            <element signature="e#1552#1553#0" expanded="false" />
+            <element signature="e#1579#1580#0" expanded="false" />
+            <element signature="e#1660#1661#0" expanded="false" />
+            <element signature="e#1721#1722#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1558-1.7.10/forgeSrc-1.7.10-10.13.4.1558-1.7.10-sources.jar!/net/minecraftforge/common/util/ForgeDirection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.65891474">
+          <caret line="25" column="21" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1558-1.7.10/forgeSrc-1.7.10-10.13.4.1558-1.7.10-sources.jar!/net/minecraftforge/fluids/FluidTank.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="158" column="22" selection-start-line="158" selection-start-column="22" selection-end-line="158" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#449#450#0" expanded="false" />
+            <element signature="e#485#486#0" expanded="false" />
+            <element signature="e#680#681#0" expanded="false" />
+            <element signature="e#741#742#0" expanded="false" />
+            <element signature="e#1337#1338#0" expanded="false" />
+            <element signature="e#1371#1372#0" expanded="false" />
+            <element signature="e#1420#1421#0" expanded="false" />
+            <element signature="e#1460#1461#0" expanded="false" />
+            <element signature="e#1535#1536#0" expanded="false" />
+            <element signature="e#1563#1564#0" expanded="false" />
+            <element signature="e#1770#1771#0" expanded="false" />
+            <element signature="e#1801#1802#0" expanded="false" />
+            <element signature="e#1857#1858#0" expanded="false" />
+            <element signature="e#1903#1904#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://F:/Programs/jdk_8_65/src.zip!/java/util/Stack.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="48" column="6" selection-start-line="48" selection-start-column="6" selection-end-line="48" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#3888#0" expanded="false" />
+            <element signature="e#2838#2839#0" expanded="false" />
+            <element signature="e#2872#2873#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/renderers/FluidTransportEntryRenderer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6613833">
-          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="45" column="9" selection-start-line="45" selection-start-column="9" selection-end-line="45" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://F:/Programs/jdk_8_65/src.zip!/java/lang/Math.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="441" column="28" selection-start-line="441" selection-start-column="28" selection-end-line="441" selection-end-column="28" />
+          <folding>
+            <element signature="e#17181#17182#0" expanded="false" />
+            <element signature="e#17264#17265#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://F:/Programs/jdk_8_65/src.zip!/java/lang/StrictMath.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="357" column="25" selection-start-line="357" selection-start-column="25" selection-end-line="357" selection-end-column="25" />
+          <folding>
+            <element signature="e#13419#13420#0" expanded="false" />
+            <element signature="e#13473#13474#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/blocks/BlockFluidTransportEntry.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="160" column="67" selection-start-line="160" selection-start-column="67" selection-end-line="160" selection-end-column="67" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1558-1.7.10/forgeSrc-1.7.10-10.13.4.1558-1.7.10-sources.jar!/cpw/mods/fml/common/network/simpleimpl/IMessage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.22696929">
+          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1558-1.7.10/forgeSrc-1.7.10-10.13.4.1558-1.7.10-sources.jar!/net/minecraft/nbt/NBTTagCompound.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://F:/Programs/jdk_8_65/src.zip!/java/lang/Double.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="536" column="25" selection-start-line="536" selection-start-column="25" selection-end-line="536" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-lang3/3.3.2/d2a489573c0ed2c4942b3660decad5d65087b406/commons-lang3-3.3.2-sources.jar!/org/apache/commons/lang3/StringUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.2413793">
+          <caret line="3252" column="11" selection-start-line="3252" selection-start-column="7" selection-end-line="3252" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/packets/PacketFilling.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="54" column="5" selection-start-line="54" selection-start-column="5" selection-end-line="54" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/packets/PacketHandlerFilling.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/packets/ModPackets.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="94" selection-start-line="14" selection-start-column="94" selection-end-line="14" selection-end-column="94" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/proxies/CommonProxy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7943925">
+          <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1558-1.7.10/forgeSrc-1.7.10-10.13.4.1558-1.7.10-sources.jar!/net/minecraft/world/IWorldAccess.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="37" column="9" selection-start-line="37" selection-start-column="9" selection-end-line="37" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/tiles/tanks/TileBaseTank.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="207" column="9" selection-start-line="207" selection-start-column="9" selection-end-line="207" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1558-1.7.10/forgeSrc-1.7.10-10.13.4.1558-1.7.10-sources.jar!/net/minecraft/world/World.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1475" column="7" selection-start-line="1475" selection-start-column="7" selection-end-line="1475" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1558-1.7.10/forgeSrc-1.7.10-10.13.4.1558-1.7.10-sources.jar!/net/minecraft/entity/Entity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="130" column="19" selection-start-line="130" selection-start-column="19" selection-end-line="130" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1558-1.7.10/forgeSrc-1.7.10-10.13.4.1558-1.7.10-sources.jar!/net/minecraft/util/Vec3.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="57" column="16" selection-start-line="57" selection-start-column="16" selection-end-line="57" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1558-1.7.10/forgeSrc-1.7.10-10.13.4.1558-1.7.10-sources.jar!/net/minecraft/client/particle/EntityFX.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="151" column="16" selection-start-line="151" selection-start-column="16" selection-end-line="151" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/particles/ParticleFluidOrb.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="45" column="64" selection-start-line="45" selection-start-column="64" selection-end-line="45" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://F:/Programs/jdk_8_65/src.zip!/java/lang/System.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.9986649">
+          <caret line="517" column="50" selection-start-line="517" selection-start-column="50" selection-end-line="517" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1558-1.7.10/forgeSrc-1.7.10-10.13.4.1558-1.7.10-sources.jar!/cpw/mods/fml/common/network/ByteBufUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/packets/PacketHandlerSpline.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="20" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/packets/PacketSpline.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="51" column="32" selection-start-line="51" selection-start-column="32" selection-end-line="51" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1181#1182#0" expanded="true" />
+            <element signature="e#1208#1209#0" expanded="true" />
+            <element signature="e#1242#1243#0" expanded="true" />
+            <element signature="e#1269#1270#0" expanded="true" />
+            <element signature="e#1309#1310#0" expanded="true" />
+            <element signature="e#1344#1345#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/utility/BasicTools.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="142" column="21" selection-start-line="142" selection-start-column="21" selection-end-line="142" selection-end-column="21" />
+          <folding>
+            <element signature="e#3759#3767#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/utility/LocVec.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="117" column="0" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
+          <folding>
+            <element signature="e#2830#2831#0" expanded="true" />
+            <element signature="e#2898#2899#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/proxies/ClientProxy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="69" column="39" selection-start-line="69" selection-start-column="39" selection-end-line="69" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/particles/ParticleManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="134" column="23" selection-start-line="134" selection-start-column="23" selection-end-line="134" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/renderers/TransportBlockRenderer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="24" column="10" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/particles/ParticleFluidTransfer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="99" column="0" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/utility/CubicSplineCreation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="47" column="111" selection-start-line="47" selection-start-column="111" selection-end-line="47" selection-end-column="111" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/tiles/TileFluidTransportEntry.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.42619926">
+          <caret line="320" column="0" selection-start-line="320" selection-start-column="0" selection-end-line="320" selection-end-column="0" />
+          <folding>
+            <element signature="e#10357#10366#0" expanded="true" />
+            <element signature="e#10408#10416#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

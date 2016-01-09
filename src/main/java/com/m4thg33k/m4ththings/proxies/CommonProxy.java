@@ -2,6 +2,7 @@ package com.m4thg33k.m4ththings.proxies;
 
 import com.m4thg33k.m4ththings.packets.PacketFilling;
 import com.m4thg33k.m4ththings.packets.PacketNBT;
+import com.m4thg33k.m4ththings.packets.PacketSpline;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
@@ -32,6 +33,11 @@ public class CommonProxy {
     }
 
     public void startParticleRendering(PacketFilling message){
+
+    }
+
+    public void startSplineRendering(PacketSpline message)
+    {
 
     }
 }

@@ -3,10 +3,12 @@ package com.m4thg33k.m4ththings.particles;
 
 import com.m4thg33k.m4ththings.helpers.MathHelper;
 import com.m4thg33k.m4ththings.tiles.tanks.TileBaseTank;
+import com.m4thg33k.m4ththings.utility.CubicSplineCreation;
 import com.m4thg33k.m4ththings.utility.LogHelper;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.particle.EffectRenderer;
 import net.minecraft.client.particle.EntityFX;
+import net.minecraft.util.Vec3;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.ForgeDirection;
 import net.minecraftforge.fluids.Fluid;
@@ -127,6 +129,19 @@ public class ParticleManager {
                     }
                 }
 
+        }
+    }
+
+    public static void fluidSplineParticles(World world, Vec3[] locs)
+    {
+        EffectRenderer renderer = Minecraft.getMinecraft().effectRenderer;
+        EntityFX splineFX;
+        Vec3[] derivs = CubicSplineCreation.generateNewDerivatives(locs);
+        for (int i=0;i<locs.length-1;i++)
+        {
+            splineFX = new ParticleFluidTransfer(world,locs[i].xCoord,locs[i].yCoord,locs[i].zCoord,derivs[i].xCoord,derivs[i].yCoord,derivs[i].zCoord);
+            renderer.addEffect(splineFX);
+            //world.spawnParticle("reddust",locations[i].xCoord,locations[i].yCoord,locations[i].zCoord,0,0,0);
         }
     }
 }
