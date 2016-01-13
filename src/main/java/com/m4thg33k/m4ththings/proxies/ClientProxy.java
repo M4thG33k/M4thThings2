@@ -65,9 +65,9 @@ public class ClientProxy extends CommonProxy {
 
         CubicSplineCreation cubicSplineCreation = new CubicSplineCreation(stack,attachedSide,initial);
 
-        Vec3[] locations = cubicSplineCreation.allLocations(0.5);
+        Vec3[] locations = cubicSplineCreation.allLocations(0.25);
         World world = Minecraft.getMinecraft().theWorld;
-        ParticleManager.fluidSplineParticles(world,locations);
+        ParticleManager.fluidSplineParticles(world,locations,FluidRegistry.getFluid(message.getFluidName()));
 //
 //        for (int i=0;i<locations.length;i++)
 //        {

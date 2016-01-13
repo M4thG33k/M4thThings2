@@ -3,6 +3,7 @@ package com.m4thg33k.m4ththings.blocks;
 import com.m4thg33k.m4ththings.helpers.NameHelper;
 import com.m4thg33k.m4ththings.init.ModBlocks;
 import com.m4thg33k.m4ththings.init.ModItems;
+import com.m4thg33k.m4ththings.interfaces.ITransportBlock;
 import com.m4thg33k.m4ththings.tiles.TileTransportBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.ITileEntityProvider;
@@ -18,6 +19,7 @@ import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.ForgeDirection;
+import net.minecraftforge.fluids.IFluidHandler;
 
 import java.util.List;
 
@@ -113,7 +115,11 @@ public class BlockTransportBlock extends Block implements ITileEntityProvider {
     }
 
     @Override
-    public void onNeighborBlockChange(World p_149695_1_, int p_149695_2_, int p_149695_3_, int p_149695_4_, Block p_149695_5_) {
-        super.onNeighborBlockChange(p_149695_1_, p_149695_2_, p_149695_3_, p_149695_4_, p_149695_5_);
+    public void onNeighborBlockChange(World world, int x, int y, int z, Block block) {
+        TileEntity tileEntity = world.getTileEntity(x,y,z);
+        if (tileEntity != null && tileEntity instanceof ITransportBlock)
+        {
+            ((ITransportBlock)tileEntity).breakInvalidConnections();
+        }
     }
 }

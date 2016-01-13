@@ -18,6 +18,7 @@ import net.minecraftforge.fluids.IFluidHandler;
 public class TileTransportBlock extends TileEntity implements ITransportBlock,IM4thNBTSync {
 
     boolean[] connections = new boolean[6];
+    ForgeDirection[] directions = ForgeDirection.VALID_DIRECTIONS;
 
     public TileTransportBlock()
     {
@@ -190,5 +191,22 @@ public class TileTransportBlock extends TileEntity implements ITransportBlock,IM
             ANS += 1;
         }
         return ANS;
+    }
+
+    @Override
+    public void breakInvalidConnections()
+    {
+        TileEntity tileEntity;
+        for (int i=0;i<6;i++)
+        {
+            if (connections[i])
+            {
+                tileEntity = BasicTools.getTEOnSide(worldObj,xCoord,yCoord,zCoord,directions[i]);
+                if (tileEntity==null || !(tileEntity instanceof ITransportBlock || tileEntity instanceof IFluidHandler))
+                {
+                    toggleConnection(directions[i],false);
+                }
+            }
+        }
     }
 }

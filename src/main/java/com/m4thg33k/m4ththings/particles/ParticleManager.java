@@ -2,8 +2,10 @@ package com.m4thg33k.m4ththings.particles;
 
 
 import com.m4thg33k.m4ththings.helpers.MathHelper;
+import com.m4thg33k.m4ththings.renderers.RendererHelper;
 import com.m4thg33k.m4ththings.tiles.tanks.TileBaseTank;
 import com.m4thg33k.m4ththings.utility.CubicSplineCreation;
+import com.m4thg33k.m4ththings.utility.LocVec;
 import com.m4thg33k.m4ththings.utility.LogHelper;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.particle.EffectRenderer;
@@ -132,14 +134,16 @@ public class ParticleManager {
         }
     }
 
-    public static void fluidSplineParticles(World world, Vec3[] locs)
+    public static void fluidSplineParticles(World world, Vec3[] locs,Fluid fluid)
     {
+        Vec3 fluidRGB = RendererHelper.getFluidRGB(fluid);
         EffectRenderer renderer = Minecraft.getMinecraft().effectRenderer;
         EntityFX splineFX;
         Vec3[] derivs = CubicSplineCreation.generateNewDerivatives(locs);
         for (int i=0;i<locs.length-1;i++)
         {
-            splineFX = new ParticleFluidTransfer(world,locs[i].xCoord,locs[i].yCoord,locs[i].zCoord,derivs[i].xCoord,derivs[i].yCoord,derivs[i].zCoord);
+            //LocVec fluidRGB = RendererHelper.colorMap[fluid.getID()-1];
+            splineFX = new ParticleFluidTransfer(world,locs[i].xCoord,locs[i].yCoord,locs[i].zCoord,derivs[i].xCoord,derivs[i].yCoord,derivs[i].zCoord,(float)fluidRGB.xCoord,(float)fluidRGB.yCoord,(float)fluidRGB.zCoord);
             renderer.addEffect(splineFX);
             //world.spawnParticle("reddust",locations[i].xCoord,locations[i].yCoord,locations[i].zCoord,0,0,0);
         }

@@ -1,5 +1,6 @@
 package com.m4thg33k.m4ththings.utility;
 
+import com.m4thg33k.m4ththings.helpers.MathHelper;
 import net.minecraft.util.Vec3;
 import net.minecraftforge.common.util.ForgeDirection;
 
@@ -26,7 +27,10 @@ public class CubicSplineCreation {
         Slopes = new Vec3[n];
 
         createPoints();
+        bendCenters(0.4);
+        //randomizePoints();
         createSlopes();
+        //LogHelper.info("Break point CubicSplineCreation");
     }
 
     //takes the internal stack of relative locations and creates an array of vectors that correspond to the midpoints
@@ -57,7 +61,7 @@ public class CubicSplineCreation {
 
         for (int i=1;i<2*path.size()-2;i++)
         {
-            Slopes[i] = BasicTools.scaleVector(Points[i+1].subtract(Points[i-1]),0.5);
+            Slopes[i] = BasicTools.scaleVector(Points[i+1].subtract(Points[i-1]),-0.5);
         }
     }
 
@@ -140,9 +144,41 @@ public class CubicSplineCreation {
         Vec3[] derivs = new Vec3[data.length-1];
         for (int i=0;i<data.length-1;i++)
         {
-            derivs[i] = BasicTools.scaleVector(data[i].subtract(data[i+1]),0.25);
+            derivs[i] = BasicTools.scaleVector(data[i].subtract(data[i+1]),0.1);
         }
 
         return derivs;
+    }
+
+    public void randomizePoints()
+    {
+        double theta;
+        double phi;
+        double radius;
+
+        //randomize the center of the blocks
+        for (int i=1;i<Points.length;i+=2)
+        {
+            theta = MathHelper.randomRad();
+            phi = MathHelper.randomRad()/2.0;
+            radius = MathHelper.randomDoubleBetween(0,0.25);
+
+            Points[i] = Points[i].addVector(radius*Math.cos(theta)*Math.sin(phi),radius*Math.sin(theta)*Math.sin(phi),radius*Math.cos(phi));
+        }
+    }
+
+    //moves the centers of each block in the path so that it is closer to the line between the two sides it enters/exits
+    //the scale (a double between 0 and 1) determines how close it is to that line. 0 = it stays in the center
+    //1 = it is on that line. Note, that if the two sides of the path are on opposite sides of the block, the center will
+    //never move
+    public void bendCenters(double scale)
+    {
+        Vec3 pointOnLine;
+
+        for (int i=1;i<Points.length;i+=2)
+        {
+            pointOnLine = BasicTools.averageVectors(Points[i-1],Points[i+1]);
+            Points[i] = BasicTools.weightedAverage(Points[i],pointOnLine,scale);
+        }
     }
 }

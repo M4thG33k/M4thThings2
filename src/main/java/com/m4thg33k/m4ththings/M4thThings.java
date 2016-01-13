@@ -7,12 +7,19 @@ import com.m4thg33k.m4ththings.init.ModRecipes;
 import com.m4thg33k.m4ththings.init.ModTiles;
 import com.m4thg33k.m4ththings.packets.ModPackets;
 import com.m4thg33k.m4ththings.proxies.CommonProxy;
+import com.m4thg33k.m4ththings.renderers.RendererHelper;
+import com.m4thg33k.m4ththings.utility.M4thEventHandler;
+import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLInterModComms;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+import net.minecraft.client.renderer.entity.RenderManager;
+import net.minecraftforge.client.event.TextureStitchEvent;
+import net.minecraftforge.common.MinecraftForge;
 
 import java.util.Random;
 
@@ -24,6 +31,7 @@ public class M4thThings {
     public static final String VERSION = "@VERSION@";
     public static final String CHANNEL_NAME = MOD_ID;
     public static final Random random = new Random();
+    public M4thEventHandler events = new M4thEventHandler();
 
     @Mod.Instance
     public static M4thThings instance = new M4thThings();
@@ -34,6 +42,9 @@ public class M4thThings {
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent e){
+        FMLCommonHandler.instance().bus().register(events);
+        MinecraftForge.EVENT_BUS.register(events);
+
         ModPackets.init();
         ModBlocks.init();
         ModItems.init();
@@ -52,6 +63,6 @@ public class M4thThings {
     @Mod.EventHandler
     public void postInit(FMLPostInitializationEvent e)
     {
-
+        //RendererHelper.getMap();
     }
 }

@@ -3,6 +3,7 @@ package com.m4thg33k.m4ththings.blocks;
 import com.m4thg33k.m4ththings.helpers.NameHelper;
 import com.m4thg33k.m4ththings.init.ModBlocks;
 import com.m4thg33k.m4ththings.init.ModItems;
+import com.m4thg33k.m4ththings.interfaces.ITransportBlock;
 import com.m4thg33k.m4ththings.tiles.TileFluidTransportEntry;
 import com.m4thg33k.m4ththings.tiles.TileTransportBlock;
 import com.m4thg33k.m4ththings.utility.LogHelper;
@@ -220,5 +221,13 @@ public class BlockFluidTransportEntry extends Block implements ITileEntityProvid
         super.breakBlock(world, x, y, z, block, meta);
     }
 
+    @Override
+    public void onNeighborBlockChange(World world, int x, int y, int z, Block block) {
+        TileEntity tileEntity = world.getTileEntity(x,y,z);
+        if (tileEntity != null && tileEntity instanceof ITransportBlock)
+        {
+            ((ITransportBlock)tileEntity).breakInvalidConnections();
+        }
+    }
 
 }

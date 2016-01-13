@@ -59,6 +59,23 @@ public class BasicTools {
         return sum;
     }
 
+    public static Vec3 addVectors(Vec3 vec1, Vec3 vec2)
+    {
+        return vec1.addVector(vec2.xCoord,vec2.yCoord,vec2.zCoord);
+    }
+
+    public static Vec3 averageVectors(Vec3 vec1, Vec3 vec2)
+    {
+        return scaleVector(addVectors(vec1,vec2),0.5);
+    }
+
+    //finds a vector that is the weighted average of the other two. That is:
+    // output = (1-scale)*vec1 + (scale)*vec2
+    public static Vec3 weightedAverage(Vec3 vec1, Vec3 vec2, double scale)
+    {
+        return addVectors(scaleVector(vec1,1-scale),scaleVector(vec2,scale));
+    }
+
     //takes a string and creates a vec3 out of it
     //if the given string is not one that is returned from vec3, this will cause an error
     public static Vec3 stringToVec3(String string)
@@ -141,5 +158,15 @@ public class BasicTools {
         }
 
         return stack;
+    }
+
+    public static int findMaxCoordinate(int[] data)
+    {
+        int max = 0;
+        for (int val:data) {
+            max = Math.max(max,Math.abs(val));
+        }
+        //LogHelper.info("Max: " + max);
+        return max;
     }
 }

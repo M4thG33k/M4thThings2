@@ -93,11 +93,12 @@ public class TileFluidTransportEntry extends TileFluidHandler implements IM4thNB
             if (drained != null && drained.amount>0)
             {
                 LocVec init = new LocVec(xCoord,yCoord,zCoord);
-                ModPackets.INSTANCE.sendToAllAround(new PacketSpline(BasicTools.stackToIntArray(stack),init.getLoc(),attachedSide), new NetworkRegistry.TargetPoint(worldObj.provider.dimensionId,xCoord,yCoord,zCoord,32));
+                int[] data = BasicTools.stackToIntArray(stack);
+                ModPackets.INSTANCE.sendToAllAround(new PacketSpline(data,init.getLoc(),attachedSide,drained.getFluid().getName()), new NetworkRegistry.TargetPoint(worldObj.provider.dimensionId,xCoord,yCoord,zCoord,BasicTools.findMaxCoordinate(data)+20));
 
                 //check to make sure each step in our path is adjacent. remove this line before releasing
-                LogHelper.info("Checking my work...");
-                checkWork(stack);
+                //LogHelper.info("Checking my work...");
+                //checkWork(stack);
 
 
 
@@ -352,10 +353,10 @@ public class TileFluidTransportEntry extends TileFluidHandler implements IM4thNB
                     }
                 }
             }
-            else
-            {
-                path.pop();
-            }
+//            else
+//            {
+//                path.pop();
+//            }
         }
         return path;
     }
@@ -374,6 +375,23 @@ public class TileFluidTransportEntry extends TileFluidHandler implements IM4thNB
             if (norm!=1)
             {
                 LogHelper.info("Something ain't right...");
+            }
+        }
+    }
+
+    @Override
+    public void breakInvalidConnections()
+    {
+        TileEntity tileEntity;
+        for (int i=0;i<6;i++)
+        {
+            if (connections[i])
+            {
+                tileEntity = BasicTools.getTEOnSide(worldObj,xCoord,yCoord,zCoord,directions[i]);
+                if (tileEntity==null || !(tileEntity instanceof ITransportBlock || tileEntity instanceof IFluidHandler))
+                {
+                    toggleConnection(directions[i],false);
+                }
             }
         }
     }

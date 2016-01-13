@@ -16,4 +16,6 @@ public interface ITransportBlock {
     boolean[] getConnections();
 
     int isValidFluidConnection(ForgeDirection side,FluidStack fluidStack);
+
+    void breakInvalidConnections();
 }
