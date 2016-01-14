@@ -4,24 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/blocks/tanks/BlockBaseTank.java" line="169" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2f402229-1e85-4ebc-b120-ed2c2c65bce5" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/assets/m4ththings/models/TransportBlockUV.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/assets/m4ththings/models/TransportConnectionUV.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/assets/m4ththings/textures/blocks/FluidTransportEntryIcon.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/assets/m4ththings/textures/items/FluidTransportEntryIcon.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/assets/m4ththings/textures/items/itemPipeVisionToggler.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/assets/m4ththings/textures/items/itemWrenchOpposite.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/assets/m4ththings/models/TransportBlock.obj" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/assets/m4ththings/models/TransportConnection.obj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/gradle.xml" afterPath="$PROJECT_DIR$/.idea/gradle.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/M4thThings2.iml" afterPath="$PROJECT_DIR$/M4thThings2.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eclipse/logs/fml-client-latest.log" afterPath="$PROJECT_DIR$/eclipse/logs/fml-client-latest.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eclipse/logs/fml-junk-earlystartup.log" afterPath="$PROJECT_DIR$/eclipse/logs/fml-junk-earlystartup.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eclipse/logs/latest.log" afterPath="$PROJECT_DIR$/eclipse/logs/latest.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/renderers/RendererHelper.java" afterPath="$PROJECT_DIR$/src/main/java/com/m4thg33k/m4ththings/renderers/RendererHelper.java" />
-    </list>
+    <list default="true" id="2f402229-1e85-4ebc-b120-ed2c2c65bce5" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
     <ignored path="$PROJECT_DIR$/classes/" />
@@ -2143,7 +2126,7 @@
       <workItem from="1452277499171" duration="7730000" />
       <workItem from="1452306102724" duration="79759000" />
       <workItem from="1452805440324" duration="3376000" />
-      <workItem from="1452808956350" duration="346000" />
+      <workItem from="1452808956350" duration="365000" />
     </task>
     <task id="LOCAL-00001" summary="Added the basic tank again; not fully operational, but it's there!">
       <created>1449093117311</created>
@@ -2229,11 +2212,17 @@
       <option name="project" value="LOCAL" />
       <updated>1452808234488</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Added forgotten models/textures">
+      <created>1452809317514</created>
+      <option name="number" value="00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1452809317514</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="241638000" />
+    <option name="totallyTimeSpent" value="241657000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -2315,7 +2304,8 @@
     <MESSAGE value="Pipe system is operational and looks good. Working on minor graphical issues" />
     <MESSAGE value="Preparations for alpha release" />
     <MESSAGE value="English localization&#10;Fixed textures&#10;Prepared for alpha release" />
-    <option name="LAST_COMMIT_MESSAGE" value="English localization&#10;Fixed textures&#10;Prepared for alpha release" />
+    <MESSAGE value="Added forgotten models/textures" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added forgotten models/textures" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
