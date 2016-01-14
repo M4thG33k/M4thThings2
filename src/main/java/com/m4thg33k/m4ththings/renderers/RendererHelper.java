@@ -1,14 +1,8 @@
 package com.m4thg33k.m4ththings.renderers;
 
-import com.m4thg33k.m4ththings.utility.LocVec;
 import com.m4thg33k.m4ththings.utility.LogHelper;
-import com.sun.deploy.util.BufferUtil;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.texture.ITextureObject;
-import net.minecraft.client.renderer.texture.TextureManager;
 import net.minecraft.client.renderer.texture.TextureMap;
 import net.minecraft.util.IIcon;
-import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.Vec3;
 import net.minecraftforge.client.event.TextureStitchEvent;
 import net.minecraftforge.fluids.Fluid;
@@ -16,19 +10,14 @@ import net.minecraftforge.fluids.FluidRegistry;
 import org.lwjgl.BufferUtils;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL12;
-import sun.plugin2.liveconnect.JSExceptions;
 
 import javax.imageio.ImageIO;
-import javax.imageio.ImageReader;
-import javax.imageio.stream.ImageInputStream;
 import java.awt.image.BufferedImage;
-import java.io.*;
+import java.io.File;
+import java.io.IOException;
 import java.lang.reflect.Field;
-import java.nio.ByteBuffer;
-import java.nio.FloatBuffer;
 import java.nio.IntBuffer;
 import java.util.Map;
-import java.util.Vector;
 
 public class RendererHelper {
 
