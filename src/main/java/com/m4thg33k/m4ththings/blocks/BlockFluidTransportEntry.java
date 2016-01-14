@@ -1,9 +1,12 @@
 package com.m4thg33k.m4ththings.blocks;
 
+import cofh.api.block.IDismantleable;
+import cofh.api.item.IToolHammer;
 import com.m4thg33k.m4ththings.helpers.NameHelper;
 import com.m4thg33k.m4ththings.init.ModBlocks;
 import com.m4thg33k.m4ththings.init.ModItems;
 import com.m4thg33k.m4ththings.interfaces.ITransportBlock;
+import com.m4thg33k.m4ththings.items.ItemWrench;
 import com.m4thg33k.m4ththings.tiles.TileFluidTransportEntry;
 import com.m4thg33k.m4ththings.tiles.TileTransportBlock;
 import com.m4thg33k.m4ththings.utility.LogHelper;
@@ -11,21 +14,26 @@ import net.minecraft.block.Block;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.AxisAlignedBB;
+import net.minecraft.util.IIcon;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.ForgeDirection;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class BlockFluidTransportEntry extends Block implements ITileEntityProvider {
+public class BlockFluidTransportEntry extends Block implements ITileEntityProvider, IDismantleable {
+
 
     public BlockFluidTransportEntry(Material material)
     {
@@ -33,6 +41,7 @@ public class BlockFluidTransportEntry extends Block implements ITileEntityProvid
         setHardness(0.5f);
         setResistance(0.5f);
         setBlockName(NameHelper.blockItemName("blockFluidTransportEntry"));
+        setBlockTextureName(NameHelper.textureName("goldPlatedIronBlock"));
     }
 
     @Override
@@ -43,6 +52,7 @@ public class BlockFluidTransportEntry extends Block implements ITileEntityProvid
         }
         return new TileFluidTransportEntry(meta);
     }
+
 
     @Override
     public int onBlockPlaced(World world, int x, int y, int z, int side, float hitX, float hitY, float hitZ, int meta) {
@@ -187,13 +197,21 @@ public class BlockFluidTransportEntry extends Block implements ITileEntityProvid
         {
             return true;
         }
-        TileEntity tileEntity = world.getTileEntity(x,y,z);
-        if (tileEntity != null && tileEntity instanceof TileFluidTransportEntry)
+        ItemStack held = player.getHeldItem();
+        if (held==null)
         {
-            if (player.getHeldItem() != null) {
-                if (player.getHeldItem().getItem() != Items.stick) {
-                    ((TileFluidTransportEntry) tileEntity).toggleConnection(ForgeDirection.VALID_DIRECTIONS[side], true);
-                }
+            return true;
+        }
+        Item item = held.getItem();
+        TileEntity tileEntity = world.getTileEntity(x,y,z);
+        if (tileEntity != null && tileEntity instanceof TileFluidTransportEntry && item instanceof IToolHammer)
+        {
+            if (item instanceof ItemWrench && held.getItemDamage()==1)
+            {
+                ((TileFluidTransportEntry)tileEntity).toggleConnection(ForgeDirection.VALID_DIRECTIONS[side].getOpposite(),true);
+            }
+            else{
+                ((TileFluidTransportEntry) tileEntity).toggleConnection(ForgeDirection.VALID_DIRECTIONS[side], true);
             }
         }
         return true;
@@ -230,4 +248,29 @@ public class BlockFluidTransportEntry extends Block implements ITileEntityProvid
         }
     }
 
+    @Override
+    public ArrayList<ItemStack> dismantleBlock(EntityPlayer entityPlayer, World world, int x, int y, int z, boolean b) {
+        ArrayList<ItemStack> stacks = this.getDrops(world,x,y,z,0,0);
+
+        world.removeTileEntity(x,y,z);
+        world.setBlockToAir(x,y,z);
+
+        for (ItemStack itemStack : stacks)
+        {
+            EntityItem entityItem = new EntityItem(world, (float)x + 0.5f, (float)y + 0.5f, (float)z + 0.5f, itemStack);
+            float f = 0.05F;
+            entityItem.motionX = (double)((float)world.rand.nextGaussian() * f);
+            entityItem.motionY = (double)((float)world.rand.nextGaussian() * f + 0.2F);
+            entityItem.motionZ = (double)((float)world.rand.nextGaussian() * f);
+
+            world.spawnEntityInWorld(entityItem);
+        }
+
+        return stacks;
+    }
+
+    @Override
+    public boolean canDismantle(EntityPlayer entityPlayer, World world, int i, int i1, int i2) {
+        return true;
+    }
 }

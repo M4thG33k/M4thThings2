@@ -11,6 +11,7 @@ import net.minecraft.network.NetworkManager;
 import net.minecraft.network.Packet;
 import net.minecraft.network.play.server.S35PacketUpdateTileEntity;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.AxisAlignedBB;
 import net.minecraftforge.common.util.ForgeDirection;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.IFluidHandler;
@@ -19,6 +20,7 @@ public class TileTransportBlock extends TileEntity implements ITransportBlock,IM
 
     boolean[] connections = new boolean[6];
     ForgeDirection[] directions = ForgeDirection.VALID_DIRECTIONS;
+    int timer;
 
     public TileTransportBlock()
     {
@@ -27,6 +29,12 @@ public class TileTransportBlock extends TileEntity implements ITransportBlock,IM
         {
             connections[i] = false;
         }
+        timer = 0;
+    }
+
+    @Override
+    public void updateEntity() {
+        timer  = (timer+1)%2880;
     }
 
     @Override
@@ -36,12 +44,17 @@ public class TileTransportBlock extends TileEntity implements ITransportBlock,IM
         {
             connections = BasicTools.intToBoolArray(tagCompound.getIntArray("Connections"));
         }
+        if (tagCompound.hasKey("Timer"))
+        {
+            timer = tagCompound.getInteger("Timer");
+        }
     }
 
     @Override
     public void writeToNBT(NBTTagCompound tagCompound) {
         super.writeToNBT(tagCompound);
         tagCompound.setIntArray("Connections",BasicTools.boolToIntArray(connections));
+        tagCompound.setInteger("Timer",timer);
     }
 
     @Override
@@ -208,5 +221,15 @@ public class TileTransportBlock extends TileEntity implements ITransportBlock,IM
                 }
             }
         }
+    }
+
+    public int getTimer()
+    {
+        return timer;
+    }
+
+    @Override
+    public AxisAlignedBB getRenderBoundingBox() {
+        return AxisAlignedBB.getBoundingBox(xCoord,yCoord,zCoord,xCoord+1,yCoord+1,zCoord+1);
     }
 }

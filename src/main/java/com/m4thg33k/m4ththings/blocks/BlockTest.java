@@ -58,7 +58,7 @@ public class BlockTest extends Block implements ITileEntityProvider {
 
     @Override
     public void addCollisionBoxesToList(World world, int x, int y, int z, AxisAlignedBB axisAlignedBB, List list, Entity entity) {
-        if (entity instanceof EntityPlayer && ((EntityPlayer) entity).getHeldItem() != null && (((EntityPlayer) entity).getHeldItem().getItem() == ModItems.itemWrench || ((EntityPlayer) entity).getHeldItem().getItem() == Item.getItemFromBlock(ModBlocks.blockTest)))
+        if (entity instanceof EntityPlayer && ((EntityPlayer) entity).getHeldItem() != null && (((EntityPlayer) entity).getHeldItem().getItem() == ModItems.itemWrench)) //|| ((EntityPlayer) entity).getHeldItem().getItem() == Item.getItemFromBlock(ModBlocks.blockTest)))
         {
             super.addCollisionBoxesToList(world, x, y, z, axisAlignedBB, list, entity);
         }
@@ -68,7 +68,7 @@ public class BlockTest extends Block implements ITileEntityProvider {
     @Override
     public AxisAlignedBB getSelectedBoundingBoxFromPool(World world, int x, int y, int z) {
         ItemStack held = Minecraft.getMinecraft().thePlayer.getHeldItem();
-        if (held!=null && (held.getItem() == ModItems.itemWrench || held.getItem() == Item.getItemFromBlock(ModBlocks.blockTest)))
+        if (held!=null && (held.getItem() == ModItems.itemWrench))// || held.getItem() == Item.getItemFromBlock(ModBlocks.blockTest)))
         {
             return super.getSelectedBoundingBoxFromPool(world, x, y, z);
         }

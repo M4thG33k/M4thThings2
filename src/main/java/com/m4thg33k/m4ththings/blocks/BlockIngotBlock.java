@@ -1,11 +1,14 @@
 package com.m4thg33k.m4ththings.blocks;
 
 import com.m4thg33k.m4ththings.helpers.NameHelper;
+import com.m4thg33k.m4ththings.players.M4thExtendedPlayer;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.IIcon;
+import net.minecraft.world.World;
 
 public class BlockIngotBlock extends Block{
 
@@ -34,4 +37,10 @@ public class BlockIngotBlock extends Block{
                 return icons[0];
         }
     }
+
+//    @Override
+//    public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int side, float hitX, float hitY, float hitZ) {
+//        (M4thExtendedPlayer.get(player)).toggleSight();
+//        return true;
+//    }
 }

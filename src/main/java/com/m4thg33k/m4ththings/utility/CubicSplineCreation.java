@@ -3,6 +3,8 @@ package com.m4thg33k.m4ththings.utility;
 import com.m4thg33k.m4ththings.helpers.MathHelper;
 import net.minecraft.util.Vec3;
 import net.minecraftforge.common.util.ForgeDirection;
+import net.minecraftforge.fluids.Fluid;
+import net.minecraftforge.fluids.FluidRegistry;
 
 import java.util.Stack;
 
@@ -16,7 +18,7 @@ public class CubicSplineCreation {
     private Vec3[] Slopes;
     private int n; //the number of points in our data set (the range of t is (0,n-1))
 
-    public CubicSplineCreation(Stack<LocVec> p, int aSide,LocVec location)
+    public CubicSplineCreation(Stack<LocVec> p, int aSide,LocVec location,int fluidID)
     {
         path = p;
         side = ForgeDirection.VALID_DIRECTIONS[aSide];
@@ -27,7 +29,8 @@ public class CubicSplineCreation {
         Slopes = new Vec3[n];
 
         createPoints();
-        bendCenters(0.4);
+        bendCenters((fluidID/((double) FluidRegistry.getMaxID())));
+        //bendCenters(0.4);
         //randomizePoints();
         createSlopes();
         //LogHelper.info("Break point CubicSplineCreation");

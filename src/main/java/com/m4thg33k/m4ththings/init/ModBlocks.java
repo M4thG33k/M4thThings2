@@ -18,7 +18,7 @@ public class ModBlocks {
     public static final BlockBaseTank blockBaseTank = new BlockBaseTank(Material.glass);
     public static final BlockAdvancedTank blockAdvancedTank = new BlockAdvancedTank(Material.glass);
     public static final BlockIngotBlock blockIngotBlock = new BlockIngotBlock(Material.iron);
-    public static final BlockTest blockTest = new BlockTest(Material.rock);
+    //public static final BlockTest blockTest = new BlockTest(Material.rock);
     public static final BlockTransportBlock blockTransportBlock = new BlockTransportBlock(Material.rock);
     public static final BlockFluidTransportEntry blockFluidTransportEntry = new BlockFluidTransportEntry(Material.rock);
 
@@ -29,6 +29,6 @@ public class ModBlocks {
         GameRegistry.registerBlock(blockIngotBlock, ItemIngotBlock.class, NameHelper.getStrippedName(blockIngotBlock.getUnlocalizedName()));
         GameRegistry.registerBlock(blockTransportBlock,NameHelper.getStrippedName(blockTransportBlock.getUnlocalizedName()));
         GameRegistry.registerBlock(blockFluidTransportEntry,NameHelper.getStrippedName(blockFluidTransportEntry.getUnlocalizedName()));
-        GameRegistry.registerBlock(blockTest, NameHelper.getStrippedName(blockTest.getUnlocalizedName()));
+        //GameRegistry.registerBlock(blockTest, NameHelper.getStrippedName(blockTest.getUnlocalizedName()));
     }
 }

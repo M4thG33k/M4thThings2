@@ -63,7 +63,7 @@ public class ClientProxy extends CommonProxy {
         Stack<LocVec> stack = BasicTools.intArrayToStack(locs);
         LocVec initial = new LocVec(init);
 
-        CubicSplineCreation cubicSplineCreation = new CubicSplineCreation(stack,attachedSide,initial);
+        CubicSplineCreation cubicSplineCreation = new CubicSplineCreation(stack,attachedSide,initial,FluidRegistry.getFluidID(message.getFluidName()));
 
         Vec3[] locations = cubicSplineCreation.allLocations(0.25);
         World world = Minecraft.getMinecraft().theWorld;
