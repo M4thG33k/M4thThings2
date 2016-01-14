@@ -4,15 +4,20 @@ import cofh.api.block.IDismantleable;
 import cofh.api.item.IToolHammer;
 import com.m4thg33k.m4ththings.helpers.NameHelper;
 import com.m4thg33k.m4ththings.utility.LogHelper;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.IIcon;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
+
+import java.util.List;
 
 public class ItemWrench extends Item implements IToolHammer{
 
@@ -54,6 +59,11 @@ public class ItemWrench extends Item implements IToolHammer{
             return true;
         }
         return true;
+    }
+
+    @Override
+    public String getUnlocalizedName(ItemStack stack) {
+        return stack.getItem().getUnlocalizedName()+"_"+stack.getItemDamage();
     }
 
     @Override
@@ -117,5 +127,22 @@ public class ItemWrench extends Item implements IToolHammer{
     @Override
     public boolean doesContainerItemLeaveCraftingGrid(ItemStack p_77630_1_) {
         return false;
+    }
+
+    @SideOnly(Side.CLIENT)
+
+    @Override
+    public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean par4) {
+        int meta = stack.getItemDamage();
+
+        switch(meta)
+        {
+            case 1:
+                list.add(EnumChatFormatting.ITALIC + "Has an opposite effect on some blocks...");
+                break;
+            default:
+                list.add(EnumChatFormatting.ITALIC + "Hit things like you normally do!");
+                break;
+        }
     }
 }

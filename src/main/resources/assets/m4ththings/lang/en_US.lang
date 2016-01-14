@@ -1,0 +1,12 @@
+item.m4ththings_itemWrench_0.name=4D Wrench
+item.m4ththings_itemWrench_1.name=Inverted 4D Wrench
+item.m4ththings_itemModIngot_0.name=Gilded Iron Ingot
+item.m4ththings_itemModNugget_0.name=Gilded Iron Nugget
+item.m4ththings_itemModCrafting_0.name=Valve Component
+item.m4ththings_itemPipeVisionToggler.name=Magic Button
+
+tile.m4ththings_blockBaseTank.name=Basic Tank
+tile.m4ththings_blockAdvancedTank.name=Quantum Tank
+tile.m4ththings_blockIngotBlock_0.name=Gilded Iron Block
+tile.m4ththings_blockTransportBlock.name=Magical Pipe
+tile.m4ththings_blockFluidTransportEntry.name=Fluid Import Valve

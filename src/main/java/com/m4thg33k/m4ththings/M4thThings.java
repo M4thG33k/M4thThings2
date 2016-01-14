@@ -23,12 +23,13 @@ import net.minecraftforge.common.MinecraftForge;
 
 import java.util.Random;
 
-@Mod(modid = M4thThings.MOD_ID, name = M4thThings.MOD_NAME, version = M4thThings.VERSION)
+@Mod(modid = M4thThings.MOD_ID, name = M4thThings.MOD_NAME, version = M4thThings.VERSION, dependencies = M4thThings.DEPENDENCIES)
 public class M4thThings {
 
     public static final String MOD_ID = "m4ththings";
     public static final String MOD_NAME = "M4th Things";
     public static final String VERSION = "@VERSION@";
+    public static final String DEPENDENCIES = "required-after:CoFHCore@[1.7.10R3.0.3,)";
     public static final String CHANNEL_NAME = MOD_ID;
     public static final Random random = new Random();
     public M4thEventHandler events = new M4thEventHandler();
